@@ -1,0 +1,175 @@
+# Installation and Setup
+
+## Install the required tools
+
+Before starting the course, install the following tools:
+
+- **Visual Studio Code**  
+  https://code.visualstudio.com/
+
+- **Git**  
+  https://git-scm.com/
+
+- **Node.js LTS**  
+  https://nodejs.org/en
+
+Useful Git setup documentation:
+
+- First-time Git setup:  
+  https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup
+
+---
+
+## Clone the course repository
+
+Open **Git Bash** or the integrated terminal in Visual Studio Code and clone the repository:
+
+```bash
+git clone <repository-url>
+```
+
+Open the cloned project:
+
+```bash
+cd ./<repository-folder>
+code .
+```
+
+---
+
+# Git Quick Reference
+
+The main Git commands we will use during the course:
+
+- `git checkout <branch-name>` -> switch to an existing branch
+- `git checkout -b <branch-name>` -> create a new branch and switch to it
+- `git pull` -> get the latest changes from the remote repository
+- `git add .` -> add all changed files
+- `git commit -m "commit message"` -> commit the added changes
+- `git push -u origin <branch-name>` -> push a new branch to GitHub for the first time
+- `git push` -> push new commits after the branch is already published
+- `git status` -> check the current branch and changed files
+
+Example workflow:
+
+```bash
+git checkout -b "lesson-01-your-name"
+
+# make your changes
+
+git add .
+git commit -m "Complete lesson 01 exercise"
+git push -u origin lesson-01-your-name
+```
+
+---
+
+
+## Import VS Code User Settings:
+
+- ctr+p (to open VS Code search menu), cmd + Shift + P (Mac)
+- type: ">Open User Settings" and select the JSON option (search for command to execute which contains this text)
+- note!: after this you will have to set up your IDE's colour scheme again
+
+## Copy the below settings and replace your JSON file with the JSON below:
+
+- makes git bash default terminal
+- configures formater as Prettier
+- configures auto format on Paste or Save
+- sets up some useful git settings
+- sets up some playwright settings for later
+
+```json
+{
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "prettier.printWidth": 200,
+  "files.autoSave": "afterDelay",
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "explorer.confirmDelete": false,
+  "js/ts.updateImportsOnFileMove.enabled": "always",
+  "git.autofetch": true,
+  "git.enableSmartCommit": true,
+  "editor.wordWrapColumn": 160,
+  "playwright.updateSnapshots": "all",
+  "playwright.env": {},
+  "playwright.reuseBrowser": true,
+  "playwright.showTrace": false,
+  "git.confirmSync": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}
+```
+
+# Playwright commands:
+
+## Select tests to execute:
+
+- `npx playwright test` -> runs all tests in project
+- `npx playwright test tests/lesson-11-playwright-intro` -> run all tests in all spec files in a specific directory and its subdirectories
+- `npx playwright test landing login` -> run files that have "landing" or "login" in the file name
+- `npx playwright test scenario.example.spec.ts` -> run specific spec file tests
+- `npx playwright test -g "Basic Scenario"` -> run a test with a specific title
+- `npx playwright test --grep "@sanity"` -> run only tests with the tag "@sanity"
+- `npx playwright test --grep-invert "@sanity"` -> run tests which DON'T have the tag "@sanity"
+- `npx playwright test --grep "@sanity|@regression"` -> run all tests with the tag "@sanity" OR the tag "@regression"
+- `npx playwright test --grep "(?=.*@sanity)(?=.*@regression)"` -> run only tests which have both the tag "@sanity" AND the tag "@regression"
+
+## Test execution parameters:
+
+- `--headed` -> forces browser headed (visual) mode
+- `--debug` -> run tests in debug mode
+- `--ui` -> runs test in ui mode
+- `--trace on` -> forces trace capture mode
+- `--workers=1` -> you can change the number of workers with this command, you can set workers to 1 to disable parallel execution
+- `--project chrome` -> forces tests to execute with chrome browser
+- `--retries=3` -> failing tests will be retried multiple times until they pass, or until the maximum number of retries is reached
+- `--last-failed` -> run only the tests that failed in the last test run, first run your tests and then run them again with this flag
+- `--list` -> execute the command to check what tests will be selected without running them
+
+## Custom execution parameters:
+
+- `ENV=staging npx playwright test` -> pass enviroment value through terminal command parameter "ENV" and use its base url for all tests
+- `LANG=en npx playwright test` -> pass language global value through terminal command parameter "LANG" and use that language for all tests
+- `SLOWMO=500 npx playwright test` -> pass a global value through terminal command parameter "SLOWMO" to make headed tests pause 500 miliseconds between actions for better visibility of execution. Deafault value is 0 when this parameter is skipped.
+
+## Example composite test run command with most of the above:
+
+- `ENV=staging LANG=bg SLOWMO=500 npx playwright test --grep "@regression" --headed --trace on`
+
+## Reports:
+
+- `npx playwright show-report` -> show report of last execution
+- `npx playwright show-trace path/to/trace.zip` -> open the trace tool for a specific scenario
+
+# Help - Documentation and Video Tutorials:
+
+## node.js (Typescript + Javascript)
+
+- `https://www.typescriptlang.org/docs/handbook/typescript-from-scratch.html` -> the actual typescript documentation
+- `https://www.w3schools.com/js/default.asp` -> javascript - a lot of the typescript code is just javascript underneath with special syntax or just plain javascript so this is very useful!
+- `https://www.w3schools.com/typescript/` -> same as above but specifically for typescript additions to javascript
+- `https://www.geeksforgeeks.org/typescript/` -> typescript examples and tutorials
+
+## Visual Studio Code
+
+- `https://code.visualstudio.com/docs/getstarted/introvideos` -> see all VS Code tutorials to learn about the IDE we use
+
+## Playwright
+
+- `https://playwright.dev/docs/intro` -> the actual documentation, this can help you with everything about Typescript! (RTFM!)
+- `https://www.youtube.com/watch?v=iTIxEZng-rc&list=PLXgRgGX8-5UVm9yioRY329rfcfy3MusiY` -> good Typescript + Playwright video tutorials
+
+## GIT
+
+- `https://www.youtube.com/watch?v=bSPSLU5T6zQ&list=PLXgRgGX8-5UWV3W9f48U7wJ1U1zixITsl` -> good video tutorials on GIT about 1h 30min long total
+
+## Locator Browser Addons
+
+- Selectors Hub
+- LetXpah

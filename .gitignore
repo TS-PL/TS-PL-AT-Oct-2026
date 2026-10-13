@@ -1,0 +1,17 @@
+# General
+/.vs/
+/.vscode/
+/.github/
+/node_modules/
+secrets.ts
+auth
+
+# Playwright
+/test-results/
+/playwright-report/
+
+# Playwright
+node_modules/
+/blob-report/
+/playwright/.cache/
+/playwright/.auth/
