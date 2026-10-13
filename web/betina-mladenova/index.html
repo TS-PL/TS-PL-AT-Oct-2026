@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML & CSS Lab for Playwright</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <h1>HTML & CSS Lab</h1>
+        <p>A simple practice page for future Playwright tests</p>
+        <nav aria-label="Main navigation">
+            <a href="#about">About</a>
+            <a href="#form-section">Form</a>
+            <a href="#products">Products</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section id="about" class="panel">
+            <h2>1. Text and Nested Elements</h2>
+            <p>This is <strong>bold text</strong>, and this is <em>emphasized text</em>.</p>
+            <p>The <span class="highlight">span</span> element is inside a paragraph.</p>
+            <div class="notice">Welcome to the HTML Lab!</div>
+            <p class="hint">Explore parent, child, and sibling elements in DevTools.</p>
+        </section>
+
+        <section id="form-section" class="panel">
+            <h2>2. Forms and Interactive Elements</h2>
+            <form id="registration-form" action="#form-section" method="get">
+                <div class="field">
+                    <label for="full-name">Full Name</label>
+                    <input id="full-name" name="fullName" type="text" placeholder="Enter your name" required>
+                </div>
+
+                <div class="field">
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email" placeholder="name@example.com" required>
+                </div>
+
+                <div class="field">
+                    <label for="password">Password</label>
+                    <input id="password" name="password" type="password" placeholder="Enter password">
+                </div>
+
+                <div class="field">
+                    <label for="city">City</label>
+                    <select id="city" name="city">
+                        <option value="">Select a city</option>
+                        <option value="sofia">Sofia</option>
+                        <option value="plovdiv">Plovdiv</option>
+                        <option value="varna">Varna</option>
+                    </select>
+                </div>
+
+                <fieldset>
+                    <legend>Preferred Contact Method</legend>
+                    <label class="inline-option"><input type="radio" name="contact" value="email" checked> Email</label>
+                    <label class="inline-option"><input type="radio" name="contact" value="phone"> Phone</label>
+                </fieldset>
+
+                <label class="inline-option"><input id="terms" type="checkbox" name="terms"> I agree to the terms and
+                    conditions</label>
+
+                <div class="field">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="3" placeholder="Write a message..."></textarea>
+                </div>
+
+                <div class="actions">
+                    <button type="submit" id="submit-btn" class="btn btn-primary">Submit</button>
+                    <button type="reset" class="btn btn-secondary">Reset</button>
+                    <button type="button" class="btn" disabled>Disabled Button</button>
+                </div>
+            </form>
+            <p class="hint">This form is for demonstration only. It has no backend and does not save data; submitting it
+                uses a GET request.</p>
+        </section>
+
+        <section id="products" class="panel">
+            <h2>3. Lists and Tables</h2>
+            <h3>Products</h3>
+            <ul class="product-list">
+                <li class="product-item">Laptop <span class="tag">In Stock</span></li>
+                <li class="product-item featured">Mouse <span class="tag">Popular</span></li>
+                <li class="product-item">Keyboard <span class="tag">In Stock</span></li>
+            </ul>
+
+            <h3>Price Table</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">Product</th>
+                        <th scope="col">Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Laptop</td>
+                        <td>$1200</td>
+                    </tr>
+                    <tr>
+                        <td>Mouse</td>
+                        <td>$30</td>
+                    </tr>
+                    <tr>
+                        <td>Keyboard</td>
+                        <td>$80</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>A practice page for HTML, CSS, DOM, and Playwright.</p>
+        <a href="#about">Back to top</a>
+    </footer>
+
+</body>
+
+</html>
