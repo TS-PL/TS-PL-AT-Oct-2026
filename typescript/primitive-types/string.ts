@@ -1,5 +1,6 @@
 // Run the file with the command:
 // npx ts-node typescript/primitive-types/string.ts
+// npx tsx typescript/primitive-types/string.ts
 
 // ==========================================
 // 1. STRING (TEXT DATA TYPE)

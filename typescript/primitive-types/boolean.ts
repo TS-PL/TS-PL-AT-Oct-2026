@@ -1,5 +1,6 @@
 // Run the file with the command:
 // npx ts-node typescript/primitive-types/boolean.ts
+// npx tsx typescript/primitive-types/boolean.ts
 
 // ==========================================
 // 1. BOOLEAN (BOOLEAN DATA TYPE)

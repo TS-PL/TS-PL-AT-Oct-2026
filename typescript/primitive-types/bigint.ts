@@ -1,5 +1,6 @@
 // Run the file with the command:
 // npx ts-node typescript/primitive-types/bigint.ts
+// npx tsx typescript/primitive-types/bigint.ts
 
 // bigint is a primitive data type in TypeScript.
 // It is used for working with very large integers

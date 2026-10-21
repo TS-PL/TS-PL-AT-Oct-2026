@@ -1,5 +1,6 @@
 // Run the file with the command:
 // npx ts-node typescript/primitive-types/number.ts
+// npx tsx typescript/primitive-types/number.ts
 
 // ==========================================
 // 1. NUMBER (NUMERIC DATA TYPE)
