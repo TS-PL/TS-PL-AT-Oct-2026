@@ -113,11 +113,33 @@ console.log(canEnter);
 // Step 2: Declare a boolean variable and check whether the string is empty (an empty string is "").
 // Step 3: Log the result.
 
+let myName = 'Nina';
+let isEmpty: boolean;
+
+if (myName === '') {
+  isEmpty = true;
+} else {
+  isEmpty = false;
+}
+
+console.log(isEmpty);
+
 // Exercise 9: Check whether a string starts with the letter 'A'
 // Step 1: Declare a variable and assign any string to it.
 // Step 2: Declare a boolean variable and check whether the string starts with 'A'.
 // Step 3: Log the result.
 // Note: The check is case-sensitive. "Apple" starts with 'A', but "apple" does not.
+
+let fruit = 'Apple';
+let startsWithA: boolean;
+
+if (fruit.startsWith('A')) {
+  startsWithA = true;
+} else {
+  startsWithA = false;
+}
+
+console.log(startsWithA);
 
 // Exercise 10: Perform string operations
 // Step 1: Create a string variable called message with the value "TypeScript is fun".
@@ -128,12 +150,23 @@ console.log(canEnter);
 // Step 6: Use a template literal to log the following sentence:
 // "My favorite programming language is ___."
 
+let message = 'TypeScript is fun';
+let textLength: number = message.length;
+
+console.log(message.length);
+
 // Part 4 — BigInt (bigint)
 
 // Exercise 11: Add BigInt values
 // Step 1: Create two variables of type bigint.
 // Step 2: Add the two bigint values together.
 // Step 3: Log the result.
+
+let bigNumber: bigint = 1111111111n;
+let bigNumber2: bigint = 2222222222n;
+let result: bigint = bigNumber + bigNumber2;
+
+console.log(result);
 
 // Part 5 — Arrays (array)
 
@@ -143,12 +176,28 @@ console.log(canEnter);
 // Step 3: Use a loop to multiply all the numbers in the array.
 // Step 4: Log the final product.
 
+let numbers: number[] = [10, 20, 30, 40];
+let product: number = 1;
+
+for (let num of numbers) {
+  product = product * num;
+}
+
+console.log(product);
+
 // Exercise 13: Create an array of student objects
 // Step 1: Create an array called students.
 // Step 2: Each object should have two properties: name and grade.
 // Step 3: Example objects: { name: "Alice", grade: 90 } and { name: "Bob", grade: 85 }.
 // Step 4: Use a loop to iterate through the array.
 // Step 5: Log each student's name.
+
+let students: { name: string; grade: number }[] = [
+  { name: 'Alice', grade: 90 },
+  { name: 'Bob', grade: 85 },
+];
+
+for (let student of students) console.log(student.name);
 
 // Part 6 — Functions and Types
 
@@ -158,11 +207,23 @@ console.log(canEnter);
 // Step 3: Inside the function, log the value of id.
 // Step 4: Call printId once with a number and once with a string.
 
+function printId(id: string | number): void {
+  console.log('ID:', id);
+}
+printId(10);
+printId('Nina');
+
 // Exercise 15: Calculate the time a QA engineer needs to test multiple features
 // Step 1: Declare two variables: the QA engineer's name (string) and the number of features to test (number). Assume each feature requires 2 hours of testing.
 // Step 2: Calculate the total time required to test all features.
 // Step 3: Use a template literal to log the QA engineer's name, the number of features, and the total time required.
 // Example: "QA engineer {QA name} will need {total hours} hours to test {number of features} features."
+
+let qaName = 'Nina';
+let FeatureTest = 5;
+let totalHours = FeatureTest * 2;
+
+console.log(`QA engineer ${qaName} will need ${totalHours} hours to test ${FeatureTest} features.`);
 
 // Exercise 16: Use union types in objects
 // Step 1: Create a type for a user object.
@@ -171,3 +232,22 @@ console.log(canEnter);
 // Step 4: Create one user object with a numeric id.
 // Step 5: Create another user object with a string id.
 // Step 6: Log both user objects.
+
+type User = {
+  id: number | string;
+  name: string;
+};
+
+let user1: User = {
+  id: 10,
+  name: 'Nina',
+};
+
+let user2: User = {
+  id: 'user',
+  name: 'Ivan',
+};
+
+// Step 6: Log both user objects.
+console.log(user1);
+console.log(user2);
