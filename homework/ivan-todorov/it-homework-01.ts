@@ -13,7 +13,6 @@ const isEmptyStr: boolean = emptyStr === "";
 console.log("isEmptyStr:", isEmptyStr);
 
 
-
 // Exercise 9: Check whether a string starts with the letter 'A'
 // Step 1: Declare a variable and assign any string to it.
 // Step 2: Declare a boolean variable and check whether the string starts with 'A'.
@@ -37,7 +36,6 @@ console.log("isFirstLetterA:", isFirstLetterA);
 // Step 6: Use a template literal to log the following sentence:
 // "My favorite programming language is ___."
 
-// Step 1: Create a string variable
 const message: string = "TypeScript is fun";
 
 console.log(message.length);
