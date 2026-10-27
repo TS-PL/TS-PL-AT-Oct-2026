@@ -1,5 +1,18 @@
 // Homework 01
 
+// Exercise 11: Add BigInt values
+// Step 1: Create two variables of type bigint.
+// Step 2: Add the two bigint values together.
+// Step 3: Log the result.
+
+const firstNumber: bigint = 10n;
+const secondNumber: bigint = 9n;
+
+const bigintSum: bigint = firstNumber + secondNumber;
+
+console.log(bigintSum);
+
+
 // Exercise 12: Calculate the product of array elements
 // Step 1: Create an array containing the numbers [10, 20, 30, 40].
 // Step 2: Create a variable to store the product (start with 1).
@@ -164,13 +177,3 @@ console.log("Maria: ", userMaria);
 // Step 5: Create a variable called favoriteLanguage and assign a programming language to it.
 // Step 6: Use a template literal to log the following sentence:
 // "My favorite programming language is ___."
-
-// Part 4 — BigInt (bigint)
-
-// Exercise 11: Add BigInt values
-// Step 1: Create two variables of type bigint.
-// Step 2: Add the two bigint values together.
-// Step 3: Log the result.
-
-
-
