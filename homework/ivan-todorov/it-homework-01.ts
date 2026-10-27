@@ -1,5 +1,19 @@
 // Homework 01
 
+// Exercise 9: Check whether a string starts with the letter 'A'
+// Step 1: Declare a variable and assign any string to it.
+// Step 2: Declare a boolean variable and check whether the string starts with 'A'.
+// Step 3: Log the result.
+// Note: The check is case-sensitive. "Apple" starts with 'A', but "apple" does not.
+
+const str: string = "Apple";
+// const str: string = "apple";
+
+const isFirstLetterA: boolean = str[0] === "A";
+
+console.log("isFirstLetterA:", isFirstLetterA);
+
+
 // Exercise 10: Perform string operations
 // Step 1: Create a string variable called message with the value "TypeScript is fun".
 // Step 2: Log the length of the string.
@@ -186,8 +200,3 @@ console.log("Maria: ", userMaria);
 // Step 2: Declare a boolean variable and check whether the string is empty (an empty string is "").
 // Step 3: Log the result.
 
-// Exercise 9: Check whether a string starts with the letter 'A'
-// Step 1: Declare a variable and assign any string to it.
-// Step 2: Declare a boolean variable and check whether the string starts with 'A'.
-// Step 3: Log the result.
-// Note: The check is case-sensitive. "Apple" starts with 'A', but "apple" does not.
