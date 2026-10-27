@@ -27,6 +27,19 @@ console.log("Ivan: ", userIvan);
 console.log("Maria: ", userMaria);
 
 
+// Exercise 15: Calculate the time a QA engineer needs to test multiple features
+// Step 1: Declare two variables: the QA engineer's name (string) and the number of features to test (number). Assume each feature requires 2 hours of testing.
+// Step 2: Calculate the total time required to test all features.
+// Step 3: Use a template literal to log the QA engineer's name, the number of features, and the total time required.
+// Example: "QA engineer {QA name} will need {total hours} hours to test {number of features} features."
+
+let name: string = "Ivan";
+let numberOfFeatures: number = 3;
+
+let totalTime: number = numberOfFeatures * 2;
+
+console.log(`QA engineer ${name} will need ${totalTime} hours to test ${numberOfFeatures} features.`);
+
 // Part 1 — Numbers (number)
 
 // Exercise 1: Swap variable values
