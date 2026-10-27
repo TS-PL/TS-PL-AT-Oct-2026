@@ -1,5 +1,18 @@
 // Homework 01
 
+// Exercise 6: Check login status
+// Step 1: Create a boolean variable called isLoggedIn.
+// Step 2: If isLoggedIn is true, log "Welcome!".
+// Step 3: If isLoggedIn is false, log "Please log in.".
+
+const isLoggedIn: boolean = true;
+
+if (isLoggedIn) {
+    console.log("Welcome!");
+} else {
+    console.log("Please log in.");
+}
+
 // Exercise 7: Check entry permission
 // Step 1: Create a boolean variable called hasTicket and set it to true.
 // Step 2: Create a boolean variable called isAdult and set it to false.
@@ -204,11 +217,3 @@ console.log("Maria: ", userMaria);
 // Step 2: Use the formula F = C * 9 / 5 + 32 to convert the temperature to Fahrenheit.
 // Step 3: Store the result in a variable.
 // Step 4: Log the temperature in Fahrenheit.
-
-// Part 2 — Booleans (boolean)
-
-// Exercise 6: Check login status
-// Step 1: Create a boolean variable called isLoggedIn.
-// Step 2: If isLoggedIn is true, log "Welcome!".
-// Step 3: If isLoggedIn is false, log "Please log in.".
-
