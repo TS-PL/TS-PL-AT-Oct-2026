@@ -1,5 +1,33 @@
 // Homework 01
 
+// Exercise 13: Create an array of student objects
+// Step 1: Create an array called students.
+// Step 2: Each object should have two properties: name and grade.
+// Step 3: Example objects: { name: "Alice", grade: 90 } and { name: "Bob", grade: 85 }.
+// Step 4: Use a loop to iterate through the array.
+// Step 5: Log each student's name.
+
+type Student = {
+    name: string;
+    grade: number;
+};
+
+const students: Student[] = [
+    { 
+        name: "Alice", 
+        grade: 90 
+    },
+    { 
+        name: "Bob", 
+        grade: 85 
+    }
+];
+
+students.map((student) => {
+    console.log(student.name);
+});
+
+
 // Exercise 14: Create a function with a union type
 // Step 1: Create a function called printId.
 // Step 2: The id parameter should accept either a string or a number (string | number).
@@ -136,9 +164,3 @@ console.log("Maria: ", userMaria);
 // Step 3: Use a loop to multiply all the numbers in the array.
 // Step 4: Log the final product.
 
-// Exercise 13: Create an array of student objects
-// Step 1: Create an array called students.
-// Step 2: Each object should have two properties: name and grade.
-// Step 3: Example objects: { name: "Alice", grade: 90 } and { name: "Bob", grade: 85 }.
-// Step 4: Use a loop to iterate through the array.
-// Step 5: Log each student's name.
