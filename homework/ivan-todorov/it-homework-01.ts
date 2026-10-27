@@ -1,5 +1,21 @@
 // Homework 01
 
+// Exercise 12: Calculate the product of array elements
+// Step 1: Create an array containing the numbers [10, 20, 30, 40].
+// Step 2: Create a variable to store the product (start with 1).
+// Step 3: Use a loop to multiply all the numbers in the array.
+// Step 4: Log the final product.
+
+const numbers: number[] = [10, 20, 30, 40];
+
+const sum: number = numbers.reduce(
+    (accumulator, number) => accumulator * number,
+    1
+);
+
+console.log(sum);
+
+
 // Exercise 13: Create an array of student objects
 // Step 1: Create an array called students.
 // Step 2: Each object should have two properties: name and grade.
@@ -156,11 +172,5 @@ console.log("Maria: ", userMaria);
 // Step 2: Add the two bigint values together.
 // Step 3: Log the result.
 
-// Part 5 — Arrays (array)
 
-// Exercise 12: Calculate the product of array elements
-// Step 1: Create an array containing the numbers [10, 20, 30, 40].
-// Step 2: Create a variable to store the product (start with 1).
-// Step 3: Use a loop to multiply all the numbers in the array.
-// Step 4: Log the final product.
 
