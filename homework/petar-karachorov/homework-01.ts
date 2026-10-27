@@ -168,9 +168,6 @@ let students = [
 for (let i = 0; i < students.length; i++) {
   // Step 5: Log each student's name.
   console.log('Student name:', students[i].name);
-
-  // Part 6 — Functions and Types
-  console.log('Student name:', students[i].name);
 }
 
 // Exercise 14: Create a function with a union type
@@ -210,14 +207,13 @@ type User = {
   name: string;
 };
 // Step 4: Create one user object with a numeric id.
-// Step 4: Create one user object with a numeric id.
 let user1: User = {
   id: 1,
   name: 'Ivan',
 };
 // Step 5: Create another user object with a string id.
 let user2: User = {
-  id: 2,
+  id: 'user-02',
   name: 'Maria',
 };
 // Step 6: Log both user objects.
