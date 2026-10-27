@@ -1,5 +1,18 @@
 // Homework 01
 
+// Exercise 7: Check entry permission
+// Step 1: Create a boolean variable called hasTicket and set it to true.
+// Step 2: Create a boolean variable called isAdult and set it to false.
+// Step 3: Create a variable called canEnter that is true only if both hasTicket and isAdult are true.
+// Step 4: Log the value of canEnter.
+
+const hasTicket: boolean = true;
+const isAdult: boolean = false;
+
+const canEnter: boolean = hasTicket && isAdult;
+
+console.log("canEnter: ", canEnter);
+
 // Exercise 8: Check whether a string is empty
 // Step 1: Declare a variable and assign any string to it.
 // Step 2: Declare a boolean variable and check whether the string is empty (an empty string is "").
@@ -198,14 +211,4 @@ console.log("Maria: ", userMaria);
 // Step 1: Create a boolean variable called isLoggedIn.
 // Step 2: If isLoggedIn is true, log "Welcome!".
 // Step 3: If isLoggedIn is false, log "Please log in.".
-
-// Exercise 7: Check entry permission
-// Step 1: Create a boolean variable called hasTicket and set it to true.
-// Step 2: Create a boolean variable called isAdult and set it to false.
-// Step 3: Create a variable called canEnter that is true only if both hasTicket and isAdult are true.
-// Step 4: Log the value of canEnter.
-
-// Part 3 — Strings (string)
-
-
 
