@@ -1,5 +1,28 @@
 // Homework 01
 
+// Exercise 10: Perform string operations
+// Step 1: Create a string variable called message with the value "TypeScript is fun".
+// Step 2: Log the length of the string.
+// Step 3: Log the string in uppercase.
+// Step 4: Log the string in lowercase.
+// Step 5: Create a variable called favoriteLanguage and assign a programming language to it.
+// Step 6: Use a template literal to log the following sentence:
+// "My favorite programming language is ___."
+
+// Step 1: Create a string variable
+const message: string = "TypeScript is fun";
+
+console.log(message.length);
+
+console.log(message.toUpperCase());
+
+console.log(message.toLowerCase());
+
+const favoriteLanguage: string = "Pitonq";
+
+console.log(`My favorite programming language is ${favoriteLanguage}.`);
+
+
 // Exercise 11: Add BigInt values
 // Step 1: Create two variables of type bigint.
 // Step 2: Add the two bigint values together.
@@ -168,12 +191,3 @@ console.log("Maria: ", userMaria);
 // Step 2: Declare a boolean variable and check whether the string starts with 'A'.
 // Step 3: Log the result.
 // Note: The check is case-sensitive. "Apple" starts with 'A', but "apple" does not.
-
-// Exercise 10: Perform string operations
-// Step 1: Create a string variable called message with the value "TypeScript is fun".
-// Step 2: Log the length of the string.
-// Step 3: Log the string in uppercase.
-// Step 4: Log the string in lowercase.
-// Step 5: Create a variable called favoriteLanguage and assign a programming language to it.
-// Step 6: Use a template literal to log the following sentence:
-// "My favorite programming language is ___."
