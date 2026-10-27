@@ -1,5 +1,19 @@
 // Homework 01
 
+// Exercise 8: Check whether a string is empty
+// Step 1: Declare a variable and assign any string to it.
+// Step 2: Declare a boolean variable and check whether the string is empty (an empty string is "").
+// Step 3: Log the result.
+
+const emptyStr: string = "";
+
+// const isEmptyStr: boolean = emptyStr.length === 0;
+const isEmptyStr: boolean = emptyStr === "";
+
+console.log("isEmptyStr:", isEmptyStr);
+
+
+
 // Exercise 9: Check whether a string starts with the letter 'A'
 // Step 1: Declare a variable and assign any string to it.
 // Step 2: Declare a boolean variable and check whether the string starts with 'A'.
@@ -195,8 +209,5 @@ console.log("Maria: ", userMaria);
 
 // Part 3 — Strings (string)
 
-// Exercise 8: Check whether a string is empty
-// Step 1: Declare a variable and assign any string to it.
-// Step 2: Declare a boolean variable and check whether the string is empty (an empty string is "").
-// Step 3: Log the result.
+
 
