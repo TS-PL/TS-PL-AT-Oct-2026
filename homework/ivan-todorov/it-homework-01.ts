@@ -8,7 +8,23 @@
 // Step 5: Create another user object with a string id.
 // Step 6: Log both user objects.
 
+type User = {
+    id: number | string;
+    name: string;
+};
 
+const userIvan: User = {
+    id: 1,
+    name: "Ivan"
+};
+
+const userMaria: User = {
+    id: "2",
+    name: "Maria"
+};
+
+console.log("Ivan: ", userIvan);
+console.log("Maria: ", userMaria);
 
 
 // Part 1 — Numbers (number)
