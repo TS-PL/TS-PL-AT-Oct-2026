@@ -1,5 +1,33 @@
 // Homework 01
 
+// Exercise 14: Create a function with a union type
+// Step 1: Create a function called printId.
+// Step 2: The id parameter should accept either a string or a number (string | number).
+// Step 3: Inside the function, log the value of id.
+// Step 4: Call printId once with a number and once with a string.
+
+function printId(id: string | number): void {
+    console.log(id);
+}
+
+printId(1);
+printId("2");
+
+
+// Exercise 15: Calculate the time a QA engineer needs to test multiple features
+// Step 1: Declare two variables: the QA engineer's name (string) and the number of features to test (number). Assume each feature requires 2 hours of testing.
+// Step 2: Calculate the total time required to test all features.
+// Step 3: Use a template literal to log the QA engineer's name, the number of features, and the total time required.
+// Example: "QA engineer {QA name} will need {total hours} hours to test {number of features} features."
+
+let name: string = "Ivan";
+let numberOfFeatures: number = 3;
+
+let totalTime: number = numberOfFeatures * 2;
+
+console.log(`QA engineer ${name} will need ${totalTime} hours to test ${numberOfFeatures} features.`);
+
+
 // Exercise 16: Use union types in objects
 // Step 1: Create a type for a user object.
 // Step 2: The object should have two properties: id and name.
@@ -27,18 +55,6 @@ console.log("Ivan: ", userIvan);
 console.log("Maria: ", userMaria);
 
 
-// Exercise 15: Calculate the time a QA engineer needs to test multiple features
-// Step 1: Declare two variables: the QA engineer's name (string) and the number of features to test (number). Assume each feature requires 2 hours of testing.
-// Step 2: Calculate the total time required to test all features.
-// Step 3: Use a template literal to log the QA engineer's name, the number of features, and the total time required.
-// Example: "QA engineer {QA name} will need {total hours} hours to test {number of features} features."
-
-let name: string = "Ivan";
-let numberOfFeatures: number = 3;
-
-let totalTime: number = numberOfFeatures * 2;
-
-console.log(`QA engineer ${name} will need ${totalTime} hours to test ${numberOfFeatures} features.`);
 
 // Part 1 — Numbers (number)
 
@@ -126,18 +142,3 @@ console.log(`QA engineer ${name} will need ${totalTime} hours to test ${numberOf
 // Step 3: Example objects: { name: "Alice", grade: 90 } and { name: "Bob", grade: 85 }.
 // Step 4: Use a loop to iterate through the array.
 // Step 5: Log each student's name.
-
-// Part 6 — Functions and Types
-
-// Exercise 14: Create a function with a union type
-// Step 1: Create a function called printId.
-// Step 2: The id parameter should accept either a string or a number (string | number).
-// Step 3: Inside the function, log the value of id.
-// Step 4: Call printId once with a number and once with a string.
-
-// Exercise 15: Calculate the time a QA engineer needs to test multiple features
-// Step 1: Declare two variables: the QA engineer's name (string) and the number of features to test (number). Assume each feature requires 2 hours of testing.
-// Step 2: Calculate the total time required to test all features.
-// Step 3: Use a template literal to log the QA engineer's name, the number of features, and the total time required.
-// Example: "QA engineer {QA name} will need {total hours} hours to test {number of features} features."
-
