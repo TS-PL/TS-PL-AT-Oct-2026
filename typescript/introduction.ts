@@ -4,6 +4,7 @@
 
 // Run the file with the command:
 // npx ts-node typescript/introduction.ts
+// npx tsx typescript/introduction.ts
 
 // ==========================================
 // 1. DOCUMENTATION AND USEFUL RESOURCES
