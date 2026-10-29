@@ -1,7 +1,5 @@
 // Homework 01
 
-import { log } from 'node:console';
-
 // Part 1 — Numbers (number)
 
 // Exercise 1: Swap variable values
