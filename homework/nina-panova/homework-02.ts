@@ -153,25 +153,17 @@ console.log(maxValues);
 // Step 4: Use reduce() to sum all values.
 // Step 5: Log the total.
 
-type Item {
-    name: string;
-    price: number;
-    quantity: number;
-}
+type Item = {
+  name: string;
+  price: number;
+  quantity: number;
+};
 
-const Items: Item [] = [
-    {name: "Apple", price: 2.50, quantity: 4,
-        name: "Banana", price: 2.80, quantity: 5,
-        name: "Orange", price: 2.90, quantity: 7
-    }
+const Items: Item[] = [
+  { name: 'Apple', price: 2.5, quantity: 4 },
+  { name: 'Banana', price: 2.8, quantity: 5 },
+  { name: 'Orange', price: 2.9, quantity: 7 },
 ];
-
-
-
-
-
-
-
 
 // Exercise 11: Get Unique Values (reduce)
 // Step 1: Declare a variable and assign an array of numbers with duplicates.
