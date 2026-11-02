@@ -262,6 +262,31 @@ console.log(union);
 // Step 3: Store the result in an object called counts with type Record<string, number>.
 // Step 4: Log the result, which should be { apple: 3, banana: 2, orange: 1 }.
 
+const fruits: string[] = ['apple', 'banana', 'apple', 'orange', 'banana', 'apple'];
+const counts: Record<string, number> = {};
+for (const f of fruits) {
+  if (f in counts) {
+    counts[f]++;
+  } else {
+    counts[f] = 1;
+  }
+}
+
+// const counts: Record<string, number> = fruits.reduce(
+//   (result, fruit) => {
+//     if (fruit in result) {
+//       result[fruit]++;
+//     } else {
+//       result[fruit] = 1;
+//     }
+
+//     return result;
+//   },
+//   {} as Record<string, number>,
+// );
+
+console.log(counts);
+
 // Exercise 17: Find the intersection of two arrays
 // Step 1: Create an array arr1 with values [1, 2, 3, 4, 5].
 // Step 2: Create another array arr2 with values [4, 5, 6, 7].
