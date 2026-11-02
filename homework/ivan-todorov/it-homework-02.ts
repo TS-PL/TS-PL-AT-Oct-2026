@@ -82,6 +82,18 @@ if (str.includes('B')) {
 // Step 2: Check if the client is older than or equal to 18 and younger than 65 (exclusive), and has a best lap time less than 60 seconds, using if-else statements.
 // Step 3: Log the client's age, best lap time, and whether the client is allowed to compete or not.
 
+// const clientAge: number = 47;
+const clientAge: number = 67;
+const bestLapTime: number = 48.01;
+let isAllowed: boolean = false;
+if (clientAge >= 18 && clientAge < 65 && bestLapTime < 60) {
+  isAllowed = true;
+}
+
+console.log(
+  `Client age: ${clientAge}, Best lap time: ${bestLapTime} seconds. The client is ${isAllowed ? '' : 'NOT '}allowed to compete.`,
+);
+
 // Part 2: Map, Filter, Reduce
 
 // Exercise 7: Convert Strings to Uppercase (map)
