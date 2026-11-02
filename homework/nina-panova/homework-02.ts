@@ -165,11 +165,24 @@ const Items: Item[] = [
   { name: 'Orange', price: 2.9, quantity: 7 },
 ];
 
+const itemTotals: number[] = Items.map((item) => item.price * item.quantity);
+const totalPrice: number = itemTotals.reduce((sum, currentPrice) => sum + currentPrice, 0);
+
+console.log(`Total price: ${totalPrice} лв.`);
+
 // Exercise 11: Get Unique Values (reduce)
 // Step 1: Declare a variable and assign an array of numbers with duplicates.
 // Step 2: Use the reduce() method to return only unique values.
 // Step 3: Store the result in a new array.
 // Step 4: Log the result.
+
+let newValues: number[] = [1, 1, 10, 2, 2, 3, 5];
+
+let uniqueValues = newValues.reduce((unique, current) => {
+  return unique.includes(current) ? unique : [...unique, current];
+}, [] as number[]);
+
+console.log(uniqueValues);
 
 // Exercise 12: Filter + Transform Users (filter + map – advanced)
 // Step 1: Declare a type User with name and age.
@@ -177,6 +190,22 @@ const Items: Item[] = [
 // Step 3: Use filter() to keep only users over 18.
 // Step 4: Use map() to extract their names.
 // Step 5: Log the result.
+
+type User = {
+  name: string;
+  age: number;
+};
+
+const users: User[] = [
+  { name: 'Ivan', age: 16 },
+  { name: 'Pavel', age: 22 },
+  { name: 'Rumen', age: 17 },
+];
+
+const adults = users.filter((user) => user.age > 18);
+const adultNames = adults.map((user) => user.name);
+
+console.log(adultNames);
 
 // Optional Exercises - (Intermediate Level)
 
@@ -186,12 +215,29 @@ const Items: Item[] = [
 // Step 3: Store the result in a new array.
 // Step 4: Log the new array, which should look like [10, 20, 30, 40].
 
+let newNumbers: number[] = [10, 20, 10, 30, 40];
+
+let uniqueNumbers = newNumbers.reduce((unique, current) => {
+  return unique.includes(current) ? unique : [...unique, current];
+}, [] as number[]);
+
+console.log(uniqueNumbers);
+
 // Exercise 14: Find the difference between two arrays
 // Step 1: Create an array arr1 with values [1, 2, 3, 4].
 // Step 2: Create another array arr2 with values [3, 4, 5].
 // Step 3: Find the elements that exist in arr1 but not in arr2, and in arr2 but not in arr1.
 // Step 4: Store the result in a variable called difference.
 // Step 5: Log the result, which should be [1, 2, 5].
+
+const arr1: number[] = [1, 2, 3, 4];
+const arr2: number[] = [3, 4, 5];
+
+const difference: number[] = arr1
+  .filter((num) => !arr2.includes(num))
+  .concat(arr2.filter((num) => !arr1.includes(num)));
+
+console.log(difference);
 
 // Exercise 15: Find the union of two arrays
 // Step 1: Create an array arr1 with values [1, 2, 3, 4].
