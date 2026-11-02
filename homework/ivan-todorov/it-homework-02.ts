@@ -69,6 +69,14 @@ if (message.length > 10) {
 // "The string {string} contains the letter 'B'"
 // "The string {string} does NOT contain the letter 'B'"
 
+// const str: string = "Bau";
+const str: string = 'Mqu';
+if (str.includes('B')) {
+  console.log(`The string ${str} contains the letter 'B'`);
+} else {
+  console.log(`The string ${str} does NOT contain the letter 'B'`);
+}
+
 // Exercise 6: Check if a client will be allowed in a karting competition.
 // Step 1: Declare 2 number variables for the client's age (whole number) and best lap time (floating-point number).
 // Step 2: Check if the client is older than or equal to 18 and younger than 65 (exclusive), and has a best lap time less than 60 seconds, using if-else statements.
