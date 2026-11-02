@@ -55,6 +55,13 @@ if (firstNumber <= secondNumber && secondNumber <= thirdNumber) {
 // Step 2: Check if the length of the variable is greater than 10 using if/else statements.
 // Step 3: Log the result.
 
+const message: string = 'SAMO LEVSKI!';
+if (message.length > 10) {
+  console.log('The length of the string is greater than 10.');
+} else {
+  console.log('The length of the string is equal or fewer than 10.');
+}
+
 // Exercise 5: Check if a string contains the letter 'B'
 // Step 1: Declare a variable and assign a 3-character string to it.
 // Step 2: Check if the string contains the letter 'B' using if/else statements.
