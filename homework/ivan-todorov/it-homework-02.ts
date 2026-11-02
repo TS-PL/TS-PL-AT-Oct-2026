@@ -249,6 +249,13 @@ console.log(difference);
 // Step 5: Store the result in a variable called union.
 // Step 6: Log the result, which should be [1, 2, 3, 4, 5].
 
+const union1: number[] = [...new Set([...new Set(arr1), ...new Set(arr2)])];
+
+const union: number[] = [...new Set([...arr1, ...arr2])];
+
+console.log(union1);
+console.log(union);
+
 // Exercise 16: Count occurrences of each element
 // Step 1: Create an array with the values ['apple', 'banana', 'apple', 'orange', 'banana', 'apple'].
 // Step 2: Count how many times each fruit appears.
