@@ -121,6 +121,13 @@ console.log(filteredArr);
 // Step 3: Store the result in a variable.
 // Step 4: Log the result.
 
+const numbers: number[] = [100, 320, 301, 40];
+const largestNumber: number = numbers.reduce((max, currentValue) => {
+  return Math.max(currentValue, max);
+});
+
+console.log('largestNumber', largestNumber);
+
 // Exercise 10: Calculate Total Price (map + reduce)
 // Step 1: Declare a type Item with name, price, and quantity.
 // Step 2: Create an array of items.
