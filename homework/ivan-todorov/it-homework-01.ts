@@ -1,4 +1,6 @@
 // Homework 01
+// npx tsx homework/ivan-todorov/it-homework-01.ts
+// npx ts-node homework/ivan-todorov/it-homework-01.ts
 
 // Exercise 6: Check login status
 // Step 1: Create a boolean variable called isLoggedIn.
@@ -8,9 +10,9 @@
 const isLoggedIn: boolean = true;
 
 if (isLoggedIn) {
-    console.log("Welcome!");
+  console.log('Welcome!');
 } else {
-    console.log("Please log in.");
+  console.log('Please log in.');
 }
 
 // Exercise 7: Check entry permission
@@ -24,20 +26,19 @@ const isAdult: boolean = false;
 
 const canEnter: boolean = hasTicket && isAdult;
 
-console.log("canEnter: ", canEnter);
+console.log('canEnter: ', canEnter);
 
 // Exercise 8: Check whether a string is empty
 // Step 1: Declare a variable and assign any string to it.
 // Step 2: Declare a boolean variable and check whether the string is empty (an empty string is "").
 // Step 3: Log the result.
 
-const emptyStr: string = "";
+const emptyStr: string = '';
 
 // const isEmptyStr: boolean = emptyStr.length === 0;
-const isEmptyStr: boolean = emptyStr === "";
+const isEmptyStr: boolean = emptyStr === '';
 
-console.log("isEmptyStr:", isEmptyStr);
-
+console.log('isEmptyStr:', isEmptyStr);
 
 // Exercise 9: Check whether a string starts with the letter 'A'
 // Step 1: Declare a variable and assign any string to it.
@@ -45,13 +46,12 @@ console.log("isEmptyStr:", isEmptyStr);
 // Step 3: Log the result.
 // Note: The check is case-sensitive. "Apple" starts with 'A', but "apple" does not.
 
-const str: string = "Apple";
+const str: string = 'Apple';
 // const str: string = "apple";
 
-const isFirstLetterA: boolean = str[0] === "A";
+const isFirstLetterA: boolean = str[0] === 'A';
 
-console.log("isFirstLetterA:", isFirstLetterA);
-
+console.log('isFirstLetterA:', isFirstLetterA);
 
 // Exercise 10: Perform string operations
 // Step 1: Create a string variable called message with the value "TypeScript is fun".
@@ -62,7 +62,7 @@ console.log("isFirstLetterA:", isFirstLetterA);
 // Step 6: Use a template literal to log the following sentence:
 // "My favorite programming language is ___."
 
-const message: string = "TypeScript is fun";
+const message: string = 'TypeScript is fun';
 
 console.log(message.length);
 
@@ -70,10 +70,9 @@ console.log(message.toUpperCase());
 
 console.log(message.toLowerCase());
 
-const favoriteLanguage: string = "Pitonq";
+const favoriteLanguage: string = 'Pitonq';
 
 console.log(`My favorite programming language is ${favoriteLanguage}.`);
-
 
 // Exercise 11: Add BigInt values
 // Step 1: Create two variables of type bigint.
@@ -87,7 +86,6 @@ const bigintSum: bigint = firstNumber + secondNumber;
 
 console.log(bigintSum);
 
-
 // Exercise 12: Calculate the product of array elements
 // Step 1: Create an array containing the numbers [10, 20, 30, 40].
 // Step 2: Create a variable to store the product (start with 1).
@@ -96,13 +94,9 @@ console.log(bigintSum);
 
 const numbers: number[] = [10, 20, 30, 40];
 
-const sum: number = numbers.reduce(
-    (accumulator, number) => accumulator * number,
-    1
-);
+const sum: number = numbers.reduce((accumulator, number) => accumulator * number, 1);
 
 console.log(sum);
-
 
 // Exercise 13: Create an array of student objects
 // Step 1: Create an array called students.
@@ -112,25 +106,24 @@ console.log(sum);
 // Step 5: Log each student's name.
 
 type Student = {
-    name: string;
-    grade: number;
+  name: string;
+  grade: number;
 };
 
 const students: Student[] = [
-    { 
-        name: "Alice", 
-        grade: 90 
-    },
-    { 
-        name: "Bob", 
-        grade: 85 
-    }
+  {
+    name: 'Alice',
+    grade: 90,
+  },
+  {
+    name: 'Bob',
+    grade: 85,
+  },
 ];
 
 students.map((student) => {
-    console.log(student.name);
+  console.log(student.name);
 });
-
 
 // Exercise 14: Create a function with a union type
 // Step 1: Create a function called printId.
@@ -139,12 +132,11 @@ students.map((student) => {
 // Step 4: Call printId once with a number and once with a string.
 
 function printId(id: string | number): void {
-    console.log(id);
+  console.log(id);
 }
 
 printId(1);
-printId("2");
-
+printId('2');
 
 // Exercise 15: Calculate the time a QA engineer needs to test multiple features
 // Step 1: Declare two variables: the QA engineer's name (string) and the number of features to test (number). Assume each feature requires 2 hours of testing.
@@ -152,13 +144,14 @@ printId("2");
 // Step 3: Use a template literal to log the QA engineer's name, the number of features, and the total time required.
 // Example: "QA engineer {QA name} will need {total hours} hours to test {number of features} features."
 
-let name: string = "Ivan";
+let name: string = 'Ivan';
 let numberOfFeatures: number = 3;
 
 let totalTime: number = numberOfFeatures * 2;
 
-console.log(`QA engineer ${name} will need ${totalTime} hours to test ${numberOfFeatures} features.`);
-
+console.log(
+  `QA engineer ${name} will need ${totalTime} hours to test ${numberOfFeatures} features.`,
+);
 
 // Exercise 16: Use union types in objects
 // Step 1: Create a type for a user object.
@@ -169,24 +162,22 @@ console.log(`QA engineer ${name} will need ${totalTime} hours to test ${numberOf
 // Step 6: Log both user objects.
 
 type User = {
-    id: number | string;
-    name: string;
+  id: number | string;
+  name: string;
 };
 
 const userIvan: User = {
-    id: 1,
-    name: "Ivan"
+  id: 1,
+  name: 'Ivan',
 };
 
 const userMaria: User = {
-    id: "2",
-    name: "Maria"
+  id: '2',
+  name: 'Maria',
 };
 
-console.log("Ivan: ", userIvan);
-console.log("Maria: ", userMaria);
-
-
+console.log('Ivan: ', userIvan);
+console.log('Maria: ', userMaria);
 
 // Part 1 — Numbers (number)
 
