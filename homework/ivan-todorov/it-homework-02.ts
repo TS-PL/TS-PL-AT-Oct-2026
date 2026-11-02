@@ -23,6 +23,15 @@ if (isMale) {
 // "The number {first number} is between {second number} and {third number}"
 // "The number {first number} is NOT between {second number} and {third number}"
 
+const firstNumber: number = 6;
+const secondNumber: number = 9;
+const thirdNumber: number = 45;
+if (firstNumber > secondNumber && firstNumber < thirdNumber) {
+  console.log(`The number ${firstNumber} is between ${secondNumber} and ${thirdNumber}`);
+} else {
+  console.log(`The number ${firstNumber} is NOT between ${secondNumber} and ${thirdNumber}`);
+}
+
 // Exercise 3: Multiple number comparison
 // Step 1: Declare 3 number variables.
 // Step 2: Log the numbers in ascending order using if-else statements.
