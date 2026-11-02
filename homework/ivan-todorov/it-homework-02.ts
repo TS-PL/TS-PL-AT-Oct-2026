@@ -36,6 +36,20 @@ if (firstNumber > secondNumber && firstNumber < thirdNumber) {
 // Step 1: Declare 3 number variables.
 // Step 2: Log the numbers in ascending order using if-else statements.
 
+if (firstNumber <= secondNumber && secondNumber <= thirdNumber) {
+  console.log(firstNumber, secondNumber, thirdNumber);
+} else if (firstNumber <= thirdNumber && thirdNumber <= secondNumber) {
+  console.log(firstNumber, thirdNumber, secondNumber);
+} else if (secondNumber <= firstNumber && firstNumber <= thirdNumber) {
+  console.log(secondNumber, firstNumber, thirdNumber);
+} else if (secondNumber <= thirdNumber && thirdNumber <= firstNumber) {
+  console.log(secondNumber, thirdNumber, firstNumber);
+} else if (thirdNumber <= firstNumber && firstNumber <= secondNumber) {
+  console.log(thirdNumber, firstNumber, secondNumber);
+} else {
+  console.log(thirdNumber, secondNumber, firstNumber);
+}
+
 // Exercise 4: Check if a string has more than 10 characters
 // Step 1: Declare a variable and assign any string to it.
 // Step 2: Check if the length of the variable is greater than 10 using if/else statements.
