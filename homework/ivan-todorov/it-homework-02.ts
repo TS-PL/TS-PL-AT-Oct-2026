@@ -102,11 +102,18 @@ console.log(
 // Step 3: Store the result in a new variable.
 // Step 4: Log the result.
 
+const strArr: string[] = ['samo', 'levski', '!'];
+const strUppercase: string[] = strArr.map((str) => str.toUpperCase());
+console.log(strUppercase);
+
 // Exercise 8: Filter Long Words (filter)
 // Step 1: Declare a variable and assign an array of words to it.
 // Step 2: Use the filter() method to keep only words longer than 5 characters.
 // Step 3: Store the result in a new variable.
 // Step 4: Log the result.
+
+const filteredArr: string[] = strArr.filter((str) => str.length > 5);
+console.log(filteredArr);
 
 // Exercise 9: Find Maximum Number (reduce)
 // Step 1: Declare a variable and assign an array of numbers to it.
