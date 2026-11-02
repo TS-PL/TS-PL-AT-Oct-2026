@@ -294,6 +294,19 @@ console.log(counts);
 // Step 4: Store the result in a variable called intersection.
 // Step 5: Log the result, which should be [4, 5].
 
+const array1: number[] = [1, 2, 3, 4, 5];
+const array2: number[] = [4, 5, 6, 7];
+// const intersection: number[] = [];
+// for (const n of array1) {
+//   if (array2.includes(n)) {
+//     intersection.push(n);
+//   }
+// }
+
+const intersection: number[] = array1.filter((n) => array2.includes(n));
+
+console.log(intersection);
+
 // Exercise 18: Flatten a nested array
 // Step 1: Create an array with the values [1, [2, 3], [4, [5, 6]]].
 // Step 2: Flatten it into a single-level array (try it without using .flat()).
