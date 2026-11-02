@@ -313,6 +313,26 @@ console.log(intersection);
 // Step 3: Store the result in a variable called flattened.
 // Step 4: Log the result, which should be [1, 2, 3, 4, 5, 6].
 
+const nestedArr = [1, [2, 3], [4, [5, 6]]];
+
+function getArr(arr: (number | (number | number[])[])[]): number[] {
+  const flattened: number[] = [];
+
+  for (const n of arr) {
+    if (Array.isArray(n)) {
+      flattened.push(...getArr(n));
+    } else {
+      flattened.push(n);
+    }
+  }
+
+  return flattened;
+}
+
+const result: number[] = getArr(nestedArr);
+
+console.log(result); // [1, 2, 3, 4, 5, 6]
+
 // Exercise 19: Split an array into chunks
 // Step 1: Create an array with the numbers [1, 2, 3, 4, 5, 6, 7].
 // Step 2: Write a function chunk(arr: number[], size: number): number[][].
