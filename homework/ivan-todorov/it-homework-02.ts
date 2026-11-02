@@ -161,12 +161,38 @@ console.log('Total:', total);
 // Step 3: Store the result in a new array.
 // Step 4: Log the result.
 
+const numbersArr: number[] = [1, 25, 300, 25, 423, 1, 58, 90, 25];
+const uniqueArr: number[] = numbersArr.reduce((acc, currNumber) => {
+  if (!acc.includes(currNumber)) {
+    acc.push(currNumber);
+  }
+
+  return acc;
+}, [] as number[]);
+
+console.log(uniqueArr);
+
 // Exercise 12: Filter + Transform Users (filter + map – advanced)
 // Step 1: Declare a type User with name and age.
 // Step 2: Create an array of users.
 // Step 3: Use filter() to keep only users over 18.
 // Step 4: Use map() to extract their names.
 // Step 5: Log the result.
+
+type User = {
+  name: string;
+  age: number;
+};
+
+const users: User[] = [
+  { name: 'Ivan', age: 47 },
+  { name: 'Sasho', age: 25 },
+  { name: 'Maria', age: 17 },
+];
+
+const usersOver18: string[] = users.filter((u) => u.age >= 18).map((u) => u.name);
+
+console.log(usersOver18);
 
 // Optional Exercises - (Intermediate Level)
 
