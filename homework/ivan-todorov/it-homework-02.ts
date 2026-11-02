@@ -135,6 +135,26 @@ console.log('largestNumber', largestNumber);
 // Step 4: Use reduce() to sum all values.
 // Step 5: Log the total.
 
+type Item = {
+  name: string;
+  price: number;
+  quantity: number;
+};
+
+const items: Item[] = [
+  { name: 'Biri', price: 2, quantity: 12 },
+  { name: 'Pizza', price: 25, quantity: 2 },
+  { name: 'Sos', price: 1.5, quantity: 3 },
+];
+
+const total: number = items
+  .map((i) => i.price * i.quantity)
+  .reduce((total, currentValue) => {
+    return total + currentValue;
+  });
+
+console.log('Total:', total);
+
 // Exercise 11: Get Unique Values (reduce)
 // Step 1: Declare a variable and assign an array of numbers with duplicates.
 // Step 2: Use the reduce() method to return only unique values.
