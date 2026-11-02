@@ -202,12 +202,44 @@ console.log(usersOver18);
 // Step 3: Store the result in a new array.
 // Step 4: Log the new array, which should look like [10, 20, 30, 40].
 
+const numbersToReduce: number[] = [10, 20, 10, 30, 40];
+const uniqueNumbers: number[] = [...new Set(numbersToReduce)];
+
+console.log(uniqueNumbers);
+
 // Exercise 14: Find the difference between two arrays
 // Step 1: Create an array arr1 with values [1, 2, 3, 4].
 // Step 2: Create another array arr2 with values [3, 4, 5].
 // Step 3: Find the elements that exist in arr1 but not in arr2, and in arr2 but not in arr1.
 // Step 4: Store the result in a variable called difference.
 // Step 5: Log the result, which should be [1, 2, 5].
+
+const arr1: number[] = [1, 2, 3, 4];
+const arr2: number[] = [3, 4, 5];
+const difference: number[] = [];
+
+for (const n of arr1) {
+  if (!arr2.includes(n)) {
+    difference.push(n);
+  }
+}
+
+for (const n of arr2) {
+  if (!arr1.includes(n)) {
+    difference.push(n);
+  }
+}
+
+// const difference1: number[] = arr1.filter((n) => !arr2.includes(n));
+// const difference2: number[] = arr2.filter((n) => !arr1.includes(n));
+// const difference: number[] = [...difference1, ...difference2];
+
+// const difference: number[] = [
+//   ...arr1.filter((number) => !arr2.includes(number)),
+//   ...arr2.filter((number) => !arr1.includes(number))
+// ];
+
+console.log(difference);
 
 // Exercise 15: Find the union of two arrays
 // Step 1: Create an array arr1 with values [1, 2, 3, 4].
