@@ -1,4 +1,6 @@
 // Homework 02
+// npx tsx homework/ivan-todorov/it-homework-02.ts
+// npx ts-node homework/ivan-todorov/it-homework-02.ts
 
 // Part 1: Conditional Statements
 
@@ -6,6 +8,13 @@
 // Step 1: Declare a boolean variable indicating whether a person is male or female and assign it a value of true or false.
 // Step 2: Use the boolean variable as a condition in an if/else statement.
 // Step 3: Log both possible results.
+
+const isMale: boolean = true;
+if (isMale) {
+  console.log('Male.');
+} else {
+  console.log('Female.');
+}
 
 // Exercise 2: Check if a number is between two other numbers
 // Step 1: Declare 3 number variables.
