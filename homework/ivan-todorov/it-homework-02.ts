@@ -329,15 +329,46 @@ function getArr(arr: (number | (number | number[])[])[]): number[] {
   return flattened;
 }
 
-const result: number[] = getArr(nestedArr);
+const flattened: number[] = getArr(nestedArr);
 
-console.log(result); // [1, 2, 3, 4, 5, 6]
+console.log(flattened);
+
+// const flattened: number[] = [];
+
+// function flatten(arr: (number | any[])[]): void {
+//   arr.forEach((element) => {
+//     if (Array.isArray(element)) {
+//       flatten(element);
+//     } else {
+//       flattened.push(element);
+//     }
+//   });
+// }
+
+// flatten(nestedArr);
+
+// console.log(flattened);
 
 // Exercise 19: Split an array into chunks
 // Step 1: Create an array with the numbers [1, 2, 3, 4, 5, 6, 7].
 // Step 2: Write a function chunk(arr: number[], size: number): number[][].
 // Step 3: Split the array into smaller arrays of the given size.
 // Step 4: Log chunk(numbers, 3), which should be [[1, 2, 3], [4, 5, 6], [7]].
+
+const chunkArr: number[] = [1, 2, 3, 4, 5, 6, 7];
+function chunk(arr: number[], size: number): number[][] {
+  const chunk: number[][] = [];
+  for (let i = 0, k = 0; i < arr.length; i += size, k++) {
+    chunk.push([]);
+    for (let j = 0; j < size && j + i < arr.length; j++) {
+      chunk[k][j] = arr[j + i];
+    }
+  }
+
+  return chunk;
+}
+
+console.log(chunk(chunkArr, 3));
 
 // Exercise 20: Find the second largest number
 // Step 1: Create an array with the numbers [12, 45, 7, 45, 23, 8].
