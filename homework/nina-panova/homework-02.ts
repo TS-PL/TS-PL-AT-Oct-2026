@@ -247,11 +247,29 @@ console.log(difference);
 // Step 5: Store the result in a variable called union.
 // Step 6: Log the result, which should be [1, 2, 3, 4, 5].
 
+const arrey1: number[] = [1, 2, 3, 4];
+const arrey2: number[] = [3, 4, 5];
+
+const union: number[] = [...new Set([...arrey1, ...arrey2])];
+console.log(union);
+
 // Exercise 16: Count occurrences of each element
 // Step 1: Create an array with the values ['apple', 'banana', 'apple', 'orange', 'banana', 'apple'].
 // Step 2: Count how many times each fruit appears.
 // Step 3: Store the result in an object called counts with type Record<string, number>.
 // Step 4: Log the result, which should be { apple: 3, banana: 2, orange: 1 }.
+
+const array3: string[] = ['apple', 'banana', 'apple', 'orange', 'banana', 'apple'];
+
+const counts: Record<string, number> = array3.reduce(
+  (acc, fruit) => {
+    acc[fruit] = (acc[fruit] || 0) + 1;
+    return acc;
+  },
+  {} as Record<string, number>,
+);
+
+console.log(counts);
 
 // Exercise 17: Find the intersection of two arrays
 // Step 1: Create an array arr1 with values [1, 2, 3, 4, 5].
@@ -259,6 +277,12 @@ console.log(difference);
 // Step 3: Find the elements that exist in both arrays.
 // Step 4: Store the result in a variable called intersection.
 // Step 5: Log the result, which should be [4, 5].
+
+const arrey5: number[] = [1, 2, 3, 4, 5];
+const arrey6: number[] = [4, 5, 6, 7];
+
+const intersection: number[] = arrey5.filter((num) => arrey6.includes(num));
+console.log(intersection);
 
 // Exercise 18: Flatten a nested array
 // Step 1: Create an array with the values [1, [2, 3], [4, [5, 6]]].
@@ -272,11 +296,41 @@ console.log(difference);
 // Step 3: Split the array into smaller arrays of the given size.
 // Step 4: Log chunk(numbers, 3), which should be [[1, 2, 3], [4, 5, 6], [7]].
 
+const numbers: number[] = [1, 2, 3, 4, 5, 6, 7];
+
+function chunk(arr: number[], size: number): number[][] {
+  const chunks: number[][] = [];
+  for (let i = 0; i < arr.length; i += size) {
+    chunks.push(arr.slice(i, i + size));
+  }
+  return chunks;
+}
+
+console.log(chunk(numbers, 3));
+
 // Exercise 20: Find the second largest number
 // Step 1: Create an array with the numbers [12, 45, 7, 45, 23, 8].
 // Step 2: Find the second largest unique number (without sorting).
 // Step 3: Store the result in a variable called secondLargest.
 // Step 4: Log the result, which should be 23.
+
+const nNumbers: number[] = [12, 45, 7, 45, 23, 8];
+
+const uniquenNumbers: number[] = Array.from(new Set(nNumbers));
+let largest: number = -Infinity;
+let secondLargest: number = -Infinity;
+
+for (let num of uniqueNumbers) {
+  if (num > largest) {
+    secondLargest = largest;
+
+    largest = num;
+  } else if (num > secondLargest && num < largest) {
+    secondLargest = num;
+  }
+}
+
+console.log(secondLargest);
 
 // Exercise 21: Group objects by a property
 // Step 1: Create an interface Student with properties name: string and grade: number.
