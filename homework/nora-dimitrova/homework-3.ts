@@ -9,7 +9,21 @@
 // Step 2: Use a for loop to iterate over the array and check if the length of each item is greater than 4 characters
 // Step 3: Log the item if the condition is met
 
+const arr: string[] = ["red", "blue", "green", "yellow", "purple", "orange", "white", "black"]
+let color = '';
+for (const colors of arr) {
+    if (colors.length > 4) {
+        color += colors + ' ';
+    }
+}
+console.log(color + ' ');
+
+
 // Exercise 2: Write a script to log all numbers from 1 to 100 in the console using a loop
+
+for (let i = 1; i <= 100; i++) {
+    console.log(i);
+}
 
 // Exercise 3: Write a script to construct the following pattern using a nested for loop:
 // *
@@ -21,6 +35,19 @@
 // * * *
 // * *
 // *
+
+let star: string = "*";
+
+for (let i = 0; i < 4; i++) {
+    console.log(star);
+    star += " *";
+}
+
+for (let i = 5; i > 0; i--) {
+    console.log(star);
+    star = star.slice(0, -2);
+}
+
 
 // Exercise 4: Phone number area code substitution
 // Step 1: Declare an array with string phone number values: "0376829209", "04239982009", "0536829299"
