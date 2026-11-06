@@ -25,6 +25,7 @@ for (let i = 1; i <= 100; i++) {
     console.log(i);
 }
 
+
 // Exercise 3: Write a script to construct the following pattern using a nested for loop:
 // *
 // * *
@@ -48,6 +49,7 @@ for (let i = 5; i > 0; i--) {
     star = star.slice(0, -2);
 }
 
+
 // Exercise 4: Phone number area code substitution
 // Step 1: Declare an array with string phone number values: "0376829209", "04239982009", "0536829299"
 // Step 2: Use a for loop to iterate over the array and replace the "0" at the beginning with "+359"
@@ -59,6 +61,7 @@ for (const number of arrPhoneNumbers) {
     txt += number.replace(number.charAt(0), "359") + ", ";
 }
 console.log(txt);
+
 
 // Exercise 5: Decide on an evening activity
 // Step 1: Declare 4 variables: name (string), hour (whole number), money (floating-point number), and whether the person is sick (boolean)
@@ -92,6 +95,7 @@ console.log(`Money available: €${money}`);
 console.log(`Is sick: ${isSick}`);
 console.log(`----------------------`);
 console.log(`Decided Activity: ${activity}`);
+
 
 // Exercise 6: Use an Enum, Object type, and Arrays
 // Step 1: Declare an enum of account types with the following values: "Current" = 1, "FlexSave" = 4, "Deposit" = 2
@@ -228,6 +232,24 @@ console.log(getUserInfo("Angel"));
 // Step 2: Use JSDoc to add a description to the function
 // Step 3: Console log calls of the function a few times with different arguments to verify it works correctly
 
+/**
+ * Prints a message expressing love for a programming language with a specific reason.
+ * 
+ * @param {string} programmingLanguage - The name of the programming language.
+ * @param {string} compliment - The reason or compliment for the language.
+ * @returns {void} This function prints directly to the console.
+ */
+function logLanguageLove(programmingLanguage, compliment) {
+    console.log(`I love ${programmingLanguage} because ${compliment}`);
+}
+
+logLanguageLove("JavaScript", "it is flexible and powers the modern web");
+
+logLanguageLove("TypeScript", "the type safety prevents bugs before running the code");
+
+logLanguageLove("Java", "its syntax is clean and very easy to read");
+
+
 // Exercise 12:
 // Step 1: Define a function that accepts a string and calculates the number of uppercase and lowercase letters
 // Hint: you can find hints at the end of this file
@@ -235,6 +257,41 @@ console.log(getUserInfo("Angel"));
 // Expected Output:
 // Number of uppercase characters: 2
 // Number of lowercase characters: 8
+
+/**
+ * Calculates and logs the number of uppercase and lowercase letters in a given string.
+ * 
+ * @param {string} text - The input string to be analyzed.
+ * @returns {void} This function prints the results directly to the console.
+ */
+function countCaseCharacters(text) {
+    let uppercaseCount = 0;
+    let lowercaseCount = 0;
+
+    for (let i = 0; i < text.length; i++) {
+        const char = text[i];
+
+        if (char.toLowerCase() !== char.toUpperCase()) {
+            if (char === char.toUpperCase()) {
+                uppercaseCount++;
+            } else if (char === char.toLowerCase()) {
+                lowercaseCount++;
+            }
+        }
+    }
+
+    console.log(`Number of uppercase characters: ${uppercaseCount}`);
+    console.log(`Number of lowercase characters: ${lowercaseCount}`);
+}
+
+countCaseCharacters("Hello World");
+
+countCaseCharacters("Hi, World! 2026");
+
+
+//End!
+
+///////////////////////////////////////////////////////////////////
 
 // Exercise 7 Hints:
 // The order of the arguments in the "add_item_in_form" function call or the order of the parameters in the function should be fixed
