@@ -139,6 +139,13 @@ for (const client of arrClient) {
 
 // add_item_in_form(2556, "Driver smoked", "Ivan", 2523, "Petko")
 
+function add_item_in_form(table_row: number, complain: string, client_name: string, car_number: number, driver_name: string) {
+    console.log("Printing the row");
+    console.log(table_row, complain, client_name, car_number, driver_name);
+}
+
+add_item_in_form(2556, "Driver smoked", "Ivan", 2523, "Petko");
+
 // Exercise 8:
 // Fix the errors in the code below:
 // Hint: you can find hints at the end of this file
@@ -150,28 +157,71 @@ for (const client of arrClient) {
 
 // console.log(sum_2_numbers(2, 3));
 
+function sum_2_numbers(number_1: number, number_2: number) {
+    const result = number_1 + number_2;
+    return result;
+}
+
+console.log(sum_2_numbers(2, 3));
+
+
 // Exercise 9:
 // Step 1: Define a function that prints in the console a person's First Name, Middle Name, and Last Name, where the Middle Name is optional
 // Step 2: Use JSDoc to add a description to the function. Example:
 
 /**
- * Multiply two numbers
- * @param {number} a - the first number to be multiplied
- * @param {number} b - the second number to be multiplied
- * @returns {number} The product of a and b
+ * 
+ * @param firstName - The first name of the user.
+ * @param middleName - The middle name of the user.
+ * @param lastName - The last name of the user.
+ * @returns {string} The formatted user details. Middle name is optional.
  */
+function printPersonNames(firstName, middleName, lastName) {
+    if (lastName === undefined) {
+        lastName = middleName;
+        console.log(`First name: ${firstName}, Last name: ${lastName}`);
+    } else {
+        console.log(`First name: ${firstName}, Middle name: ${middleName}, Last name: ${lastName}`);
+    }
+}
 
-// function multiply(a: number, b: number): number {
-//     return a * b;
-// }
+printPersonNames("Ana", "Petkova", "Yanakieva");
 
-// Step 3: Call the function with and without a Middle Name to verify it works correctly
+printPersonNames("Ana", "Yanakieva");
+
 
 // Exercise 10:
 // Step 1: Define a function that returns concatenated strings: first name, last name, and age
 // Step 2: Use JSDoc to add a description to the function
 // Step 3: If the function is not called with arguments, it should return default values and the message: "Missing one or all arguments - first name, last name, or age"
 // Step 4: Console log calls of the function once with all arguments and a few times with missing arguments to verify it works correctly
+
+/**
+ * Concatenates the first name, last name, and age into a single formatted string.
+ * Returns default values and a warning message if any argument is missing.
+ * 
+ * @param {string} firstName - The first name of the user.
+ * @param {string} lastName - The last name of the user.
+ * @param {number} age - The age of the user.
+ * @returns {string} The formatted user details or a missing arguments message.
+ */
+function getUserInfo(firstName, lastName, age) {
+    if (!firstName || !lastName || !age) {
+        const defaultFirst = firstName;
+        const defaultLast = lastName;
+        const defaultAge = age;
+
+        return `Missing one or all arguments - first name, last name, or age. Default data: ${defaultFirst} ${defaultLast}, Age: ${defaultAge}`;
+    }
+
+    return `Name: ${firstName} ${lastName}, Age: ${age}`;
+}
+
+console.log(getUserInfo("Angel", "Ivanov", 25));
+console.log(getUserInfo("Angel", "Ivanov"));
+console.log(getUserInfo("Ivanov", 25));
+console.log(getUserInfo("Angel"));
+
 
 // Exercise 11:
 // Step 1: Define a function that accepts 2 named parameters: programming language and compliment, and prints in the console a message: "I love {programming language} because {compliment}"
