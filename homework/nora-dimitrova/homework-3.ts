@@ -102,6 +102,27 @@ console.log(`Decided Activity: ${activity}`);
 // }
 // Step 3: Add the objects to an array and use a for loop to iterate over the array and log the name and account type of each client in the console
 
+enum AccountTypes {
+    Current = 1,
+    FlexSave = 4,
+    Deposit = 2
+}
+
+type Client = {
+    name: string;
+    accountType: AccountTypes;
+};
+
+const arrClient: Client[] = [
+    { name: "John Doe", accountType: AccountTypes.Current },
+    { name: "Ann Smith", accountType: AccountTypes.FlexSave },
+    { name: "Bob Joк", accountType: AccountTypes.Deposit },
+];
+
+for (const client of arrClient) {
+    const currentAccountName = AccountTypes[client.accountType];
+    console.log(`Client Name: ${client.name}, Account Type: ${currentAccountName}`);
+}
 
 
 // Functions
