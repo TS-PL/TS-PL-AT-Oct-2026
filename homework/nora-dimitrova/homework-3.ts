@@ -191,7 +191,7 @@ function printPersonNames(firstName, middleName, lastName) {
 
 printPersonNames("Ana", "Petkova", "Yanakieva");
 
-printPersonNames("Ana", "Yanakieva");
+// printPersonNames("Ana", "Yanakieva");
 
 
 // Exercise 10:
@@ -222,9 +222,9 @@ function getUserInfo(firstName, lastName, age) {
 }
 
 console.log(getUserInfo("Angel", "Ivanov", 25));
-console.log(getUserInfo("Angel", "Ivanov"));
-console.log(getUserInfo("Ivanov", 25));
-console.log(getUserInfo("Angel"));
+// console.log(getUserInfo("Angel", "Ivanov"));
+// console.log(getUserInfo("Ivanov", 25));
+// console.log(getUserInfo("Angel"));
 
 
 // Exercise 11:
@@ -291,7 +291,6 @@ countCaseCharacters("Hi, World! 2026");
 
 //End!
 
-///////////////////////////////////////////////////////////////////
 
 // Exercise 7 Hints:
 // The order of the arguments in the "add_item_in_form" function call or the order of the parameters in the function should be fixed
