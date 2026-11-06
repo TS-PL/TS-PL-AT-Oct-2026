@@ -48,11 +48,17 @@ for (let i = 5; i > 0; i--) {
     star = star.slice(0, -2);
 }
 
-
 // Exercise 4: Phone number area code substitution
 // Step 1: Declare an array with string phone number values: "0376829209", "04239982009", "0536829299"
 // Step 2: Use a for loop to iterate over the array and replace the "0" at the beginning with "+359"
 // Step 3: Log the original and the new phone numbers in the console
+
+const arrPhoneNumbers: string[] = ["0376829209", "04239982009", "0536829299"];
+let txt = '';
+for (const number of arrPhoneNumbers) {
+    txt += number.replace(number.charAt(0), "359") + ", ";
+}
+console.log(txt);
 
 // Exercise 5: Decide on an evening activity
 // Step 1: Declare 4 variables: name (string), hour (whole number), money (floating-point number), and whether the person is sick (boolean)
