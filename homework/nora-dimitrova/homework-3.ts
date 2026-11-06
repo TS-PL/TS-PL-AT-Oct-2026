@@ -69,6 +69,30 @@ console.log(txt);
 // - If the person is sick, the activity is "stay at home and go to bed"
 // Step 3: Log the person's details and the decided activity
 
+const name: string = "Ina";
+const hour: number = 19;
+const money: number = 20.50;
+const isSick: boolean = false;
+
+let activity: string = "";
+
+if (isSick) {
+    activity = "stay at home and go to bed";
+} else if (money > 20 && hour >= 21 && hour <= 24) {
+    activity = "watch a movie";
+} else if (money >= 20) {
+    activity = "go to the cinema";
+} else {
+    activity = "go to the park";
+}
+console.log(`--- Person Details ---`);
+console.log(`Name: ${name}`);
+console.log(`Current Hour: ${hour}:00`);
+console.log(`Money available: €${money}`);
+console.log(`Is sick: ${isSick}`);
+console.log(`----------------------`);
+console.log(`Decided Activity: ${activity}`);
+
 // Exercise 6: Use an Enum, Object type, and Arrays
 // Step 1: Declare an enum of account types with the following values: "Current" = 1, "FlexSave" = 4, "Deposit" = 2
 // Step 2: Declare 3 objects with client data containing their name and their card account types as enum values:
@@ -77,6 +101,8 @@ console.log(txt);
 //   accountType: reference the enum here and assign the account a value,
 // }
 // Step 3: Add the objects to an array and use a for loop to iterate over the array and log the name and account type of each client in the console
+
+
 
 // Functions
 
