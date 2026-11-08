@@ -1,0 +1,306 @@
+// Run the file with the command:
+// npx ts-node homework/nora-dimitrova/homework-3.ts
+// npx tsx homework/nora-dimitrova/homework-3.ts
+
+// Homework 03 - Collections and Loops
+
+// Exercise 1: Loop over an array and log items only if the item's length is over 4 characters
+// Step 1: Declare an array with the colors: "red", "blue", "green", "yellow", "purple", "orange", "white", "black"
+// Step 2: Use a for loop to iterate over the array and check if the length of each item is greater than 4 characters
+// Step 3: Log the item if the condition is met
+
+const arr: string[] = ["red", "blue", "green", "yellow", "purple", "orange", "white", "black"]
+let color = '';
+for (const colors of arr) {
+    if (colors.length > 4) {
+        color += colors + ' ';
+    }
+}
+console.log(color + ' ');
+
+
+// Exercise 2: Write a script to log all numbers from 1 to 100 in the console using a loop
+
+for (let i = 1; i <= 100; i++) {
+    console.log(i);
+}
+
+
+// Exercise 3: Write a script to construct the following pattern using a nested for loop:
+// *
+// * *
+// * * *
+// * * * *
+// * * * * *
+// * * * *
+// * * *
+// * *
+// *
+
+let star: string = "*";
+
+for (let i = 0; i < 4; i++) {
+    console.log(star);
+    star += " *";
+}
+
+for (let i = 5; i > 0; i--) {
+    console.log(star);
+    star = star.slice(0, -2);
+}
+
+
+// Exercise 4: Phone number area code substitution
+// Step 1: Declare an array with string phone number values: "0376829209", "04239982009", "0536829299"
+// Step 2: Use a for loop to iterate over the array and replace the "0" at the beginning with "+359"
+// Step 3: Log the original and the new phone numbers in the console
+
+const arrPhoneNumbers: string[] = ["0376829209", "04239982009", "0536829299"];
+let txt = '';
+for (const number of arrPhoneNumbers) {
+    txt += number.replace(number.charAt(0), "359") + ", ";
+}
+console.log(txt);
+
+
+// Exercise 5: Decide on an evening activity
+// Step 1: Declare 4 variables: name (string), hour (whole number), money (floating-point number), and whether the person is sick (boolean)
+// Step 2: Write a conditional statement that decides on an evening activity based on the following rules:
+// - If the person is not sick and has at least 20 money, the activity is "go to the cinema"
+// - If the person is not sick and has less than 20 money, the activity is "go to the park"
+// - If the person is not sick, has more than 20 money, but it is late at night (hour is between 21 and 24), the activity is "watch a movie"
+// - If the person is sick, the activity is "stay at home and go to bed"
+// Step 3: Log the person's details and the decided activity
+
+const name: string = "Ina";
+const hour: number = 19;
+const money: number = 20.50;
+const isSick: boolean = false;
+
+let activity: string = "";
+
+if (isSick) {
+    activity = "stay at home and go to bed";
+} else if (money > 20 && hour >= 21 && hour <= 24) {
+    activity = "watch a movie";
+} else if (money >= 20) {
+    activity = "go to the cinema";
+} else {
+    activity = "go to the park";
+}
+console.log(`--- Person Details ---`);
+console.log(`Name: ${name}`);
+console.log(`Current Hour: ${hour}:00`);
+console.log(`Money available: €${money}`);
+console.log(`Is sick: ${isSick}`);
+console.log(`----------------------`);
+console.log(`Decided Activity: ${activity}`);
+
+
+// Exercise 6: Use an Enum, Object type, and Arrays
+// Step 1: Declare an enum of account types with the following values: "Current" = 1, "FlexSave" = 4, "Deposit" = 2
+// Step 2: Declare 3 objects with client data containing their name and their card account types as enum values:
+// {
+//   name: "John Doe",
+//   accountType: reference the enum here and assign the account a value,
+// }
+// Step 3: Add the objects to an array and use a for loop to iterate over the array and log the name and account type of each client in the console
+
+enum AccountTypes {
+    Current = 1,
+    FlexSave = 4,
+    Deposit = 2
+}
+
+type Client = {
+    name: string;
+    accountType: AccountTypes;
+};
+
+const arrClient: Client[] = [
+    { name: "John Doe", accountType: AccountTypes.Current },
+    { name: "Ann Smith", accountType: AccountTypes.FlexSave },
+    { name: "Bob Joк", accountType: AccountTypes.Deposit },
+];
+
+for (const client of arrClient) {
+    const currentAccountName = AccountTypes[client.accountType];
+    console.log(`Client Name: ${client.name}, Account Type: ${currentAccountName}`);
+}
+
+
+// Functions
+
+// Exercise 7:
+// Fix the following code to print the same message each time the function is called.
+// Hint: you can find hints at the end of this file
+// Call the function in order to verify it works
+
+// function add_item_in_form(table_row: number, complain: string, client_name: string, driver_name: string, car_number: number) {
+//     console.log("Printing the row");
+//     console.log(table_row, complain, client_name, car_number, driver_name);
+// }
+
+// add_item_in_form(2556, "Driver smoked", "Ivan", 2523, "Petko")
+
+function add_item_in_form(table_row: number, complain: string, client_name: string, car_number: number, driver_name: string) {
+    console.log("Printing the row");
+    console.log(table_row, complain, client_name, car_number, driver_name);
+}
+
+add_item_in_form(2556, "Driver smoked", "Ivan", 2523, "Petko");
+
+// Exercise 8:
+// Fix the errors in the code below:
+// Hint: you can find hints at the end of this file
+// Call the function in order to verify it works
+
+// function sum_2_numbers(number_1: number, number_2: number) {
+//     const result = number_1 + number_2;
+// }
+
+// console.log(sum_2_numbers(2, 3));
+
+function sum_2_numbers(number_1: number, number_2: number) {
+    const result = number_1 + number_2;
+    return result;
+}
+
+console.log(sum_2_numbers(2, 3));
+
+
+// Exercise 9:
+// Step 1: Define a function that prints in the console a person's First Name, Middle Name, and Last Name, where the Middle Name is optional
+// Step 2: Use JSDoc to add a description to the function. Example:
+
+/**
+ * 
+ * @param firstName - The first name of the user.
+ * @param middleName - The middle name of the user.
+ * @param lastName - The last name of the user.
+ * @returns {string} The formatted user details. Middle name is optional.
+ */
+function printPersonNames(firstName, middleName, lastName) {
+    if (lastName === undefined) {
+        lastName = middleName;
+        console.log(`First name: ${firstName}, Last name: ${lastName}`);
+    } else {
+        console.log(`First name: ${firstName}, Middle name: ${middleName}, Last name: ${lastName}`);
+    }
+}
+
+printPersonNames("Ana", "Petkova", "Yanakieva");
+
+// printPersonNames("Ana", "Yanakieva");
+
+
+// Exercise 10:
+// Step 1: Define a function that returns concatenated strings: first name, last name, and age
+// Step 2: Use JSDoc to add a description to the function
+// Step 3: If the function is not called with arguments, it should return default values and the message: "Missing one or all arguments - first name, last name, or age"
+// Step 4: Console log calls of the function once with all arguments and a few times with missing arguments to verify it works correctly
+
+/**
+ * Concatenates the first name, last name, and age into a single formatted string.
+ * Returns default values and a warning message if any argument is missing.
+ * 
+ * @param {string} firstName - The first name of the user.
+ * @param {string} lastName - The last name of the user.
+ * @param {number} age - The age of the user.
+ * @returns {string} The formatted user details or a missing arguments message.
+ */
+function getUserInfo(firstName, lastName, age) {
+    if (!firstName || !lastName || !age) {
+        const defaultFirst = firstName;
+        const defaultLast = lastName;
+        const defaultAge = age;
+
+        return `Missing one or all arguments - first name, last name, or age. Default data: ${defaultFirst} ${defaultLast}, Age: ${defaultAge}`;
+    }
+
+    return `Name: ${firstName} ${lastName}, Age: ${age}`;
+}
+
+console.log(getUserInfo("Angel", "Ivanov", 25));
+// console.log(getUserInfo("Angel", "Ivanov"));
+// console.log(getUserInfo("Ivanov", 25));
+// console.log(getUserInfo("Angel"));
+
+
+// Exercise 11:
+// Step 1: Define a function that accepts 2 named parameters: programming language and compliment, and prints in the console a message: "I love {programming language} because {compliment}"
+// Step 2: Use JSDoc to add a description to the function
+// Step 3: Console log calls of the function a few times with different arguments to verify it works correctly
+
+/**
+ * Prints a message expressing love for a programming language with a specific reason.
+ * 
+ * @param {string} programmingLanguage - The name of the programming language.
+ * @param {string} compliment - The reason or compliment for the language.
+ * @returns {void} This function prints directly to the console.
+ */
+function logLanguageLove(programmingLanguage, compliment) {
+    console.log(`I love ${programmingLanguage} because ${compliment}`);
+}
+
+logLanguageLove("JavaScript", "it is flexible and powers the modern web");
+
+logLanguageLove("TypeScript", "the type safety prevents bugs before running the code");
+
+logLanguageLove("Java", "its syntax is clean and very easy to read");
+
+
+// Exercise 12:
+// Step 1: Define a function that accepts a string and calculates the number of uppercase and lowercase letters
+// Hint: you can find hints at the end of this file
+// Example: Sample string: "Hello World"
+// Expected Output:
+// Number of uppercase characters: 2
+// Number of lowercase characters: 8
+
+/**
+ * Calculates and logs the number of uppercase and lowercase letters in a given string.
+ * 
+ * @param {string} text - The input string to be analyzed.
+ * @returns {void} This function prints the results directly to the console.
+ */
+function countCaseCharacters(text) {
+    let uppercaseCount = 0;
+    let lowercaseCount = 0;
+
+    for (let i = 0; i < text.length; i++) {
+        const char = text[i];
+
+        if (char.toLowerCase() !== char.toUpperCase()) {
+            if (char === char.toUpperCase()) {
+                uppercaseCount++;
+            } else if (char === char.toLowerCase()) {
+                lowercaseCount++;
+            }
+        }
+    }
+
+    console.log(`Number of uppercase characters: ${uppercaseCount}`);
+    console.log(`Number of lowercase characters: ${lowercaseCount}`);
+}
+
+countCaseCharacters("Hello World");
+
+countCaseCharacters("Hi, World! 2026");
+
+
+//End!
+
+
+// Exercise 7 Hints:
+// The order of the arguments in the "add_item_in_form" function call or the order of the parameters in the function should be fixed
+
+// Exercise 8 Hints:
+// 1. Missing closing bracket in the console log statement
+// 2. A return statement is missing inside the function
+
+// Exercise 12 Hints:
+// 1. Use a for loop to iterate through the string
+// 2. Use 2 variables to count the number of uppercase and lowercase letters
+// 3. Use an if statement to check if a character is uppercase or lowercase and increment the respective counter
+// 4. Use a collection as a return value to return both counts
