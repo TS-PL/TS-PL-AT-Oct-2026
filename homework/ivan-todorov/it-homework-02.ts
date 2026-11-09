@@ -447,11 +447,35 @@ console.log(studentsByGrade);
 // Step 4: Store the result in a new array (do not change the original).
 // Step 5: Log the names, which should be ['Ivan', 'Ana', 'Maria', 'Petar'].
 
+const studentsByGradeAndName = [...students]
+  .sort((a, b) => {
+    if (b.grade === a.grade) {
+      return a.name.localeCompare(b.name);
+    }
+
+    return b.grade - a.grade;
+  })
+  .map((s) => s.name);
+
+console.log(studentsByGradeAndName);
+
 // Exercise 23: Rotate an array
 // Step 1: Create an array with the numbers [1, 2, 3, 4, 5].
 // Step 2: Write a function rotate(arr: number[], k: number): number[].
 // Step 3: Move the last k elements to the front of the array.
 // Step 4: Log rotate(numbers, 2), which should be [4, 5, 1, 2, 3].
+
+const arrNums = [1, 2, 3, 4, 5];
+
+function rotate(arr: number[], k: number): number[] {
+  const splitIndex = arr.length - k;
+  const lastPart = arr.slice(splitIndex);
+  const firstPart = arr.slice(0, splitIndex);
+
+  return [...lastPart, ...firstPart];
+}
+
+console.log(rotate(arrNums, 2));
 
 // Exercise 24: Use a tuple to return min and max
 // Step 1: Create an array with the numbers [8, 3, 15, 1, 9].
