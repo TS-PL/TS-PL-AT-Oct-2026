@@ -484,6 +484,26 @@ console.log(rotate(arrNums, 2));
 // Step 4: Destructure the result into min and max.
 // Step 5: Log the result, which should be "Min: 1, Max: 15".
 
+const nums = [8, 3, 15, 1, 9];
+
+function minMax(arr: number[]): [min: number, max: number] {
+  let min = arr[0];
+  let max = arr[0];
+  for (const n of arr) {
+    if (n < min) {
+      min = n;
+    }
+    if (n > max) {
+      max = n;
+    }
+  }
+
+  return [min, max];
+}
+
+const [min, max] = minMax(nums);
+console.log(`Min: ${min}, Max: ${max}`);
+
 // Exercise 25: Filter by an enum value
 // Step 1: Create an enum Status with members Active, Inactive and Pending.
 // Step 2: Create an interface User with properties name: string and status: Status.
@@ -491,3 +511,28 @@ console.log(rotate(arrNums, 2));
 // Step 4: Write a function getUsersByStatus(users: User[], status: Status): string[]
 //         that returns the names of users with the given status.
 // Step 5: Log the names of all active users.
+
+enum Status {
+  Active,
+  Inactive,
+  Pending,
+}
+
+interface UserStatus {
+  name: string;
+  status: Status;
+}
+
+const usersStatus: UserStatus[] = [
+  { name: 'Teodor', status: Status.Active },
+  { name: 'Ivan', status: Status.Inactive },
+  { name: 'Soni', status: Status.Active },
+  { name: 'Petar', status: Status.Pending },
+  { name: 'Hrisi', status: Status.Inactive },
+];
+
+function getUsersByStatus(users: UserStatus[], status: Status): string[] {
+  return users.filter((user) => user.status === status).map((user) => user.name);
+}
+
+console.log(getUsersByStatus(usersStatus, Status.Active));
