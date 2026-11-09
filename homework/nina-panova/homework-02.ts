@@ -1,0 +1,370 @@
+// Homework 02
+
+// npx ts-node homework/nina-panova/homework-02.ts
+
+// Part 1: Conditional Statements
+
+// Exercise 1: Use a boolean as an if/else condition
+// Step 1: Declare a boolean variable indicating whether a person is male or female and assign it a value of true or false.
+// Step 2: Use the boolean variable as a condition in an if/else statement.
+// Step 3: Log both possible results.
+
+let male = true;
+
+if (male) {
+  console.log('Male');
+} else {
+  console.log('Female');
+}
+
+let female = true;
+
+if (female) {
+  console.log('Female');
+} else {
+  console.log('Male');
+}
+
+// Exercise 2: Check if a number is between two other numbers
+// Step 1: Declare 3 number variables.
+// Step 2: Check if the first number is between the second and third numbers using if-else statements.
+// Step 3: Log the result like so:
+// "The number {first number} is between {second number} and {third number}"
+// "The number {first number} is NOT between {second number} and {third number}"
+
+const number1 = 5;
+const number2 = 1;
+const number3 = 10;
+
+if (number1 > 1 && number1 < 10) {
+  console.log(`The number ${number1} is between ${number2} and ${number3}`);
+} else {
+  console.log(`The number ${number1} is NOT between ${number2} and ${number3}`);
+}
+
+// Exercise 3: Multiple number comparison
+// Step 1: Declare 3 number variables.
+// Step 2: Log the numbers in ascending order using if-else statements.
+
+const firstNumber = 5;
+const secondNumber = 1;
+const thirdNumber = 10;
+
+if (firstNumber < secondNumber && secondNumber < thirdNumber) {
+  console.log(`${firstNumber}, ${secondNumber}, ${thirdNumber}`);
+} else if (firstNumber < thirdNumber && thirdNumber < secondNumber) {
+  console.log(`${firstNumber}, ${thirdNumber}, ${secondNumber}`);
+} else if (secondNumber < firstNumber && firstNumber < thirdNumber) {
+  console.log(`${secondNumber}, ${firstNumber}, ${thirdNumber}`);
+} else if (secondNumber < thirdNumber && thirdNumber < firstNumber) {
+  console.log(`${secondNumber}, ${thirdNumber}, ${firstNumber}`);
+} else if (thirdNumber < firstNumber && firstNumber < secondNumber) {
+  console.log(`${thirdNumber}, ${firstNumber}, ${secondNumber}`);
+} else {
+  console.log(`${thirdNumber}, ${secondNumber}, ${firstNumber}`);
+}
+
+// Exercise 4: Check if a string has more than 10 characters
+// Step 1: Declare a variable and assign any string to it.
+// Step 2: Check if the length of the variable is greater than 10 using if/else statements.
+// Step 3: Log the result.
+
+let name = 'Nina Panova';
+
+if (name.length > 10) {
+  console.log(`Name ${name} is grеater than 10`);
+} else {
+  console.log(`Name ${name} is less than 10`);
+}
+
+// Exercise 5: Check if a string contains the letter 'B'
+// Step 1: Declare a variable and assign a 3-character string to it.
+// Step 2: Check if the string contains the letter 'B' using if/else statements.
+// Step 3: Log the result like so:
+// "The string {string} contains the letter 'B'"
+// "The string {string} does NOT contain the letter 'B'"
+
+let shortName = 'Pol';
+if (shortName.includes('B')) {
+  console.log(`The string "${shortName}" contains the letter 'B'.`);
+} else {
+  console.log(`The string "${shortName}" does NOT contain the letter 'B'.`);
+}
+
+// Exercise 6: Check if a client will be allowed in a karting competition.
+// Step 1: Declare 2 number variables for the client's age (whole number) and best lap time (floating-point number).
+// Step 2: Check if the client is older than or equal to 18 and younger than 65 (exclusive), and has a best lap time less than 60 seconds, using if-else statements.
+// Step 3: Log the client's age, best lap time, and whether the client is allowed to compete or not.
+
+let clientAge = 24;
+let bestLapTime = 42.55;
+
+if (clientAge >= 18 && clientAge < 65 && bestLapTime < 60) {
+  console.log(
+    `Client Age: ${clientAge}, Best Lap Time: ${bestLapTime}s. The client IS allowed to compete.`,
+  );
+} else {
+  console.log(
+    `Client Age: ${clientAge}, Best Lap Time: ${bestLapTime}s. The client is NOT allowed to compete.`,
+  );
+}
+
+// Part 2: Map, Filter, Reduce
+
+// Exercise 7: Convert Strings to Uppercase (map)
+// Step 1: Declare a variable and assign an array of strings to it.
+// Step 2: Use the map() method to transform each string to uppercase.
+// Step 3: Store the result in a new variable.
+// Step 4: Log the result.
+
+let persons: string[] = ['nina', 'rumen', 'pavel'];
+let upercasePersons = persons.map((person) => person.toUpperCase());
+
+console.log(upercasePersons);
+
+// Exercise 8: Filter Long Words (filter)
+// Step 1: Declare a variable and assign an array of words to it.
+// Step 2: Use the filter() method to keep only words longer than 5 characters.
+// Step 3: Store the result in a new variable.
+// Step 4: Log the result.
+
+let fruits: string[] = ['apple', 'banana', 'orange', 'watemelon'];
+
+let longFruits = fruits.filter((fruit) => fruit.length > 5);
+
+console.log(longFruits);
+
+// Exercise 9: Find Maximum Number (reduce)
+// Step 1: Declare a variable and assign an array of numbers to it.
+// Step 2: Use the reduce() method to find the largest number.
+// Step 3: Store the result in a variable.
+// Step 4: Log the result.
+
+let values: number[] = [1, 5, 10, 2, 15, 3, 25];
+
+let maxValues = values.reduce((max, current) => (current > max ? current : max), values[0]);
+
+console.log(maxValues);
+
+// Exercise 10: Calculate Total Price (map + reduce)
+// Step 1: Declare a type Item with name, price, and quantity.
+// Step 2: Create an array of items.
+// Step 3: Use map() to calculate price × quantity for each item.
+// Step 4: Use reduce() to sum all values.
+// Step 5: Log the total.
+
+type Item = {
+  name: string;
+  price: number;
+  quantity: number;
+};
+
+const Items: Item[] = [
+  { name: 'Apple', price: 2.5, quantity: 4 },
+  { name: 'Banana', price: 2.8, quantity: 5 },
+  { name: 'Orange', price: 2.9, quantity: 7 },
+];
+
+const itemTotals: number[] = Items.map((item) => item.price * item.quantity);
+const totalPrice: number = itemTotals.reduce((sum, currentPrice) => sum + currentPrice, 0);
+
+console.log(`Total price: ${totalPrice} лв.`);
+
+// Exercise 11: Get Unique Values (reduce)
+// Step 1: Declare a variable and assign an array of numbers with duplicates.
+// Step 2: Use the reduce() method to return only unique values.
+// Step 3: Store the result in a new array.
+// Step 4: Log the result.
+
+let newValues: number[] = [1, 1, 10, 2, 2, 3, 5];
+
+let uniqueValues = newValues.reduce((unique, current) => {
+  return unique.includes(current) ? unique : [...unique, current];
+}, [] as number[]);
+
+console.log(uniqueValues);
+
+// Exercise 12: Filter + Transform Users (filter + map – advanced)
+// Step 1: Declare a type User with name and age.
+// Step 2: Create an array of users.
+// Step 3: Use filter() to keep only users over 18.
+// Step 4: Use map() to extract their names.
+// Step 5: Log the result.
+
+type User = {
+  name: string;
+  age: number;
+};
+
+const users: User[] = [
+  { name: 'Ivan', age: 16 },
+  { name: 'Pavel', age: 22 },
+  { name: 'Rumen', age: 17 },
+];
+
+const adults = users.filter((user) => user.age > 18);
+const adultNames = adults.map((user) => user.name);
+
+console.log(adultNames);
+
+// Optional Exercises - (Intermediate Level)
+
+// Exercise 13: Remove duplicate numbers from an array
+// Step 1: Create an array with the numbers [10, 20, 10, 30, 40].
+// Step 2: Remove the duplicate numbers from the array.
+// Step 3: Store the result in a new array.
+// Step 4: Log the new array, which should look like [10, 20, 30, 40].
+
+let newNumbers: number[] = [10, 20, 10, 30, 40];
+
+let uniqueNumbers = newNumbers.reduce((unique, current) => {
+  return unique.includes(current) ? unique : [...unique, current];
+}, [] as number[]);
+
+console.log(uniqueNumbers);
+
+// Exercise 14: Find the difference between two arrays
+// Step 1: Create an array arr1 with values [1, 2, 3, 4].
+// Step 2: Create another array arr2 with values [3, 4, 5].
+// Step 3: Find the elements that exist in arr1 but not in arr2, and in arr2 but not in arr1.
+// Step 4: Store the result in a variable called difference.
+// Step 5: Log the result, which should be [1, 2, 5].
+
+const arr1: number[] = [1, 2, 3, 4];
+const arr2: number[] = [3, 4, 5];
+
+const difference: number[] = arr1
+  .filter((num) => !arr2.includes(num))
+  .concat(arr2.filter((num) => !arr1.includes(num)));
+
+console.log(difference);
+
+// Exercise 15: Find the union of two arrays
+// Step 1: Create an array arr1 with values [1, 2, 3, 4].
+// Step 2: Create another array arr2 with values [3, 4, 5].
+// Step 3: Combine both arrays into one.
+// Step 4: Remove duplicate values.
+// Step 5: Store the result in a variable called union.
+// Step 6: Log the result, which should be [1, 2, 3, 4, 5].
+
+const arrey1: number[] = [1, 2, 3, 4];
+const arrey2: number[] = [3, 4, 5];
+
+const union: number[] = [...new Set([...arrey1, ...arrey2])];
+console.log(union);
+
+// Exercise 16: Count occurrences of each element
+// Step 1: Create an array with the values ['apple', 'banana', 'apple', 'orange', 'banana', 'apple'].
+// Step 2: Count how many times each fruit appears.
+// Step 3: Store the result in an object called counts with type Record<string, number>.
+// Step 4: Log the result, which should be { apple: 3, banana: 2, orange: 1 }.
+
+const array3: string[] = ['apple', 'banana', 'apple', 'orange', 'banana', 'apple'];
+
+const counts: Record<string, number> = array3.reduce(
+  (acc, fruit) => {
+    acc[fruit] = (acc[fruit] || 0) + 1;
+    return acc;
+  },
+  {} as Record<string, number>,
+);
+
+console.log(counts);
+
+// Exercise 17: Find the intersection of two arrays
+// Step 1: Create an array arr1 with values [1, 2, 3, 4, 5].
+// Step 2: Create another array arr2 with values [4, 5, 6, 7].
+// Step 3: Find the elements that exist in both arrays.
+// Step 4: Store the result in a variable called intersection.
+// Step 5: Log the result, which should be [4, 5].
+
+const arrey5: number[] = [1, 2, 3, 4, 5];
+const arrey6: number[] = [4, 5, 6, 7];
+
+const intersection: number[] = arrey5.filter((num) => arrey6.includes(num));
+console.log(intersection);
+
+// Exercise 18: Flatten a nested array
+// Step 1: Create an array with the values [1, [2, 3], [4, [5, 6]]].
+// Step 2: Flatten it into a single-level array (try it without using .flat()).
+// Step 3: Store the result in a variable called flattened.
+// Step 4: Log the result, which should be [1, 2, 3, 4, 5, 6].
+
+// Exercise 19: Split an array into chunks
+// Step 1: Create an array with the numbers [1, 2, 3, 4, 5, 6, 7].
+// Step 2: Write a function chunk(arr: number[], size: number): number[][].
+// Step 3: Split the array into smaller arrays of the given size.
+// Step 4: Log chunk(numbers, 3), which should be [[1, 2, 3], [4, 5, 6], [7]].
+
+const numbers: number[] = [1, 2, 3, 4, 5, 6, 7];
+
+function chunk(arr: number[], size: number): number[][] {
+  const chunks: number[][] = [];
+  for (let i = 0; i < arr.length; i += size) {
+    chunks.push(arr.slice(i, i + size));
+  }
+  return chunks;
+}
+
+console.log(chunk(numbers, 3));
+
+// Exercise 20: Find the second largest number
+// Step 1: Create an array with the numbers [12, 45, 7, 45, 23, 8].
+// Step 2: Find the second largest unique number (without sorting).
+// Step 3: Store the result in a variable called secondLargest.
+// Step 4: Log the result, which should be 23.
+
+const nNumbers: number[] = [12, 45, 7, 45, 23, 8];
+
+const uniquenNumbers: number[] = Array.from(new Set(nNumbers));
+let largest: number = -Infinity;
+let secondLargest: number = -Infinity;
+
+for (let num of uniqueNumbers) {
+  if (num > largest) {
+    secondLargest = largest;
+
+    largest = num;
+  } else if (num > secondLargest && num < largest) {
+    secondLargest = num;
+  }
+}
+
+console.log(secondLargest);
+
+// Exercise 21: Group objects by a property
+// Step 1: Create an interface Student with properties name: string and grade: number.
+// Step 2: Create an array of students:
+//         [{ name: 'Ana', grade: 5 }, { name: 'Ivan', grade: 6 },
+//          { name: 'Maria', grade: 5 }, { name: 'Petar', grade: 4 }]
+// Step 3: Group the students by grade.
+// Step 4: Store the result in a variable called grouped with type Record<number, string[]>.
+// Step 5: Log the result, which should be { 4: ['Petar'], 5: ['Ana', 'Maria'], 6: ['Ivan'] }.
+
+// Exercise 22: Sort objects by multiple fields
+// Step 1: Use the students array from Exercise 25.
+// Step 2: Sort the students by grade (highest first).
+// Step 3: If two students have the same grade, sort them by name (A to Z).
+// Step 4: Store the result in a new array (do not change the original).
+// Step 5: Log the names, which should be ['Ivan', 'Ana', 'Maria', 'Petar'].
+
+// Exercise 23: Rotate an array
+// Step 1: Create an array with the numbers [1, 2, 3, 4, 5].
+// Step 2: Write a function rotate(arr: number[], k: number): number[].
+// Step 3: Move the last k elements to the front of the array.
+// Step 4: Log rotate(numbers, 2), which should be [4, 5, 1, 2, 3].
+
+// Exercise 24: Use a tuple to return min and max
+// Step 1: Create an array with the numbers [8, 3, 15, 1, 9].
+// Step 2: Write a function minMax(arr: number[]): [min: number, max: number].
+// Step 3: Find the smallest and largest numbers in one loop.
+// Step 4: Destructure the result into min and max.
+// Step 5: Log the result, which should be "Min: 1, Max: 15".
+
+// Exercise 25: Filter by an enum value
+// Step 1: Create an enum Status with members Active, Inactive and Pending.
+// Step 2: Create an interface User with properties name: string and status: Status.
+// Step 3: Create an array of 5 users with different statuses.
+// Step 4: Write a function getUsersByStatus(users: User[], status: Status): string[]
+//         that returns the names of users with the given status.
+// Step 5: Log the names of all active users.

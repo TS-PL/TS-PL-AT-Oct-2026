@@ -24,10 +24,10 @@ console.log(a, b);
 // Step 2: Declare a boolean variable and use an expression to check whether the number is even.
 // Step 3: Log the result.
 
-let number = 2;
+let myNumber = 2;
 let isEven: boolean;
 
-if (number % 2 === 0) {
+if (myNumber % 2 === 0) {
   isEven = true;
 } else {
   isEven = false;
@@ -70,10 +70,10 @@ console.log(multiply);
 // Step 3: Store the result in a variable.
 // Step 4: Log the temperature in Fahrenheit.
 
-let Celsius = 30;
-let Fahrenheit = (Celsius * 9) / 5 + 32;
+let celsius = 30;
+let fahrenheit = (celsius * 9) / 5 + 32;
 
-console.log(Fahrenheit);
+console.log(fahrenheit);
 
 // Part 2 — Booleans (boolean)
 
@@ -82,15 +82,13 @@ console.log(Fahrenheit);
 // Step 2: If isLoggedIn is true, log "Welcome!".
 // Step 3: If isLoggedIn is false, log "Please log in.".
 
-let isLoggedIn: true;
+let isLoggedIn: boolean = false;
 
-if ((isLoggedIn = true)) {
+if (isLoggedIn) {
   console.log('Welcome!');
 } else {
   console.log('Please log in.');
 }
-
-console.log(isLoggedIn);
 
 // Exercise 7: Check entry permission
 // Step 1: Create a boolean variable called hasTicket and set it to true.
@@ -149,9 +147,13 @@ console.log(startsWithA);
 // "My favorite programming language is ___."
 
 let message = 'TypeScript is fun';
-let textLength: number = message.length;
 
 console.log(message.length);
+console.log(message.toUpperCase());
+console.log(message.toLowerCase());
+
+let favoriteLanguage = 'TypeScript';
+console.log(`My favorite programming language is ${favoriteLanguage}.`);
 
 // Part 4 — BigInt (bigint)
 
@@ -218,10 +220,10 @@ printId('Nina');
 // Example: "QA engineer {QA name} will need {total hours} hours to test {number of features} features."
 
 let qaName = 'Nina';
-let FeatureTest = 5;
-let totalHours = FeatureTest * 2;
+let featureTest = 5;
+let totalHours = featureTest * 2;
 
-console.log(`QA engineer ${qaName} will need ${totalHours} hours to test ${FeatureTest} features.`);
+console.log(`QA engineer ${qaName} will need ${totalHours} hours to test ${featureTest} features.`);
 
 // Exercise 16: Use union types in objects
 // Step 1: Create a type for a user object.
