@@ -376,6 +376,35 @@ console.log(chunk(chunkArr, 3));
 // Step 3: Store the result in a variable called secondLargest.
 // Step 4: Log the result, which should be 23.
 
+const secondLargestNumbers: number[] = [12, 45, 7, 45, 23, 8];
+let largest: number = secondLargestNumbers[0];
+let secondLargest: number = secondLargestNumbers[0];
+for (let i = 1; i < secondLargestNumbers.length; i++) {
+  if (secondLargestNumbers[i] > largest) {
+    secondLargest = largest;
+    largest = secondLargestNumbers[i];
+  }
+  if (secondLargest < secondLargestNumbers[i] && secondLargestNumbers[i] !== largest) {
+    secondLargest = secondLargestNumbers[i];
+  }
+}
+
+// const secondLargest: number = numbers.reduce(
+//   (result, currentValue) => {
+//     if (currentValue > result[0]) {
+//       result[1] = result[0];
+//       result[0] = currentValue;
+//     } else if (currentValue > result[1] && currentValue < result[0]) {
+//       result[1] = currentValue;
+//     }
+
+//     return result;
+//   },
+//   [-Infinity, -Infinity]
+// )[1];
+
+console.log(secondLargest);
+
 // Exercise 21: Group objects by a property
 // Step 1: Create an interface Student with properties name: string and grade: number.
 // Step 2: Create an array of students:
@@ -384,6 +413,32 @@ console.log(chunk(chunkArr, 3));
 // Step 3: Group the students by grade.
 // Step 4: Store the result in a variable called grouped with type Record<number, string[]>.
 // Step 5: Log the result, which should be { 4: ['Petar'], 5: ['Ana', 'Maria'], 6: ['Ivan'] }.
+
+interface Student {
+  name: string;
+  grade: number;
+}
+
+const students: Student[] = [
+  { name: 'Ana', grade: 5 },
+  { name: 'Ivan', grade: 6 },
+  { name: 'Maria', grade: 5 },
+  { name: 'Petar', grade: 4 },
+];
+
+// const studentsByGrade: Record<number, string[]> = {};
+// for (const s of students) {
+//   studentsByGrade[s.grade] ??= [];
+//   studentsByGrade[s.grade].push(s.name);
+// }
+
+const studentsByGrade = students.reduce<Record<number, string[]>>((result, { name, grade }) => {
+  (result[grade] ??= []).push(name);
+
+  return result;
+}, {});
+
+console.log(studentsByGrade);
 
 // Exercise 22: Sort objects by multiple fields
 // Step 1: Use the students array from Exercise 25.
