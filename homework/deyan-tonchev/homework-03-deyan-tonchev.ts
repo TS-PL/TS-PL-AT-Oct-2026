@@ -1,15 +1,5 @@
 // npx tsx homework/deyan-tonchev/homework-03-deyan-tonchev
 
-// // //Използвай последователно await, когато следващата стъпка зависи от предишната.
-
-// // // Използвай Promise.all(), когато задачите са независими и могат да се изпълнят едновременно.
-
-// // //Това е най-честият въпрос на интервю за async/await и Promise.all().
-
-// Run the file with the command:
-// npx ts-node typescript/oop/class.ts
-// npx tsx typescript/oop/class.ts
-
 // Homework 03
 
 // Part 1: Collections and Loops
