@@ -391,3 +391,16 @@ console.log('usersAge', usersAge);
 // Without a compare function, sort() compares numbers as strings.
 // [100, 56, 67, 64, 88].sort() -> [ 100, 56, 64, 67, 88 ]
 // "100" comes first because "1" < "5" when compared as text.
+
+// Recursion
+function countdown(n: number): void {
+  if (n === 0) {
+    // base case
+    console.log('Start');
+    return;
+  }
+  console.log(n);
+  countdown(n - 1); // recursion step
+}
+
+countdown(5);
