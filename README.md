@@ -35,35 +35,18 @@ cd ./<repository-folder>
 code .
 ```
 
----
+## Run the following commands in git-bash terminal to install poject packages:
 
-# Git Quick Reference
+- `npm install` -> install all project packages
+- `npx ts-node -v` -> if it asks you to install ts-node Accept, try again and you should see a version in your console like 'v10.9.2'
+- `npm init playwright@latest` -> install Plawright through terminal or use Ctr+Shift+P and look for option "Test:Install Playwright"
 
-The main Git commands we will use during the course:
+## Install VS Code extensions:
 
-- `git checkout <branch-name>` -> switch to an existing branch
-- `git checkout -b <branch-name>` -> create a new branch and switch to it
-- `git pull` -> get the latest changes from the remote repository
-- `git add .` -> add all changed files
-- `git commit -m "commit message"` -> commit the added changes
-- `git push -u origin <branch-name>` -> push a new branch to GitHub for the first time
-- `git push` -> push new commits after the branch is already published
-- `git status` -> check the current branch and changed files
-
-Example workflow:
-
-```bash
-git checkout -b "lesson-01-your-name"
-
-# make your changes
-
-git add .
-git commit -m "Complete lesson 01 exercise"
-git push -u origin lesson-01-your-name
-```
-
----
-
+- Playwright (publisher: Microsoft)
+- ESLint (publisher: Microsoft)
+- Live Preview (publisher: Microsoft)
+- Prettier (publisher: Prettier)
 
 ## Import VS Code User Settings:
 
@@ -106,6 +89,31 @@ git push -u origin lesson-01-your-name
 }
 ```
 
+# Git Quick Reference
+
+The main Git commands we will use during the course:
+
+- `git checkout <branch-name>` -> switch to an existing branch
+- `git checkout -b <branch-name>` -> create a new branch and switch to it
+- `git pull` -> get the latest changes from the remote repository
+- `git add .` -> add all changed files
+- `git commit -m "commit message"` -> commit the added changes
+- `git push -u origin <branch-name>` -> push a new branch to GitHub for the first time
+- `git push` -> push new commits after the branch is already published
+- `git status` -> check the current branch and changed files
+
+Example workflow:
+
+```bash
+git checkout -b "lesson-01-your-name"
+
+# make your changes
+
+git add .
+git commit -m "Complete lesson 01 exercise"
+git push -u origin lesson-01-your-name
+```
+
 # Playwright commands:
 
 ## Select tests to execute:
@@ -132,15 +140,9 @@ git push -u origin lesson-01-your-name
 - `--last-failed` -> run only the tests that failed in the last test run, first run your tests and then run them again with this flag
 - `--list` -> execute the command to check what tests will be selected without running them
 
-## Custom execution parameters:
-
-- `ENV=staging npx playwright test` -> pass enviroment value through terminal command parameter "ENV" and use its base url for all tests
-- `LANG=en npx playwright test` -> pass language global value through terminal command parameter "LANG" and use that language for all tests
-- `SLOWMO=500 npx playwright test` -> pass a global value through terminal command parameter "SLOWMO" to make headed tests pause 500 miliseconds between actions for better visibility of execution. Deafault value is 0 when this parameter is skipped.
-
 ## Example composite test run command with most of the above:
 
-- `ENV=staging LANG=bg SLOWMO=500 npx playwright test --grep "@regression" --headed --trace on`
+- `npx playwright test --grep "@regression" --headed --trace on`
 
 ## Reports:
 
@@ -172,4 +174,3 @@ git push -u origin lesson-01-your-name
 ## Locator Browser Addons
 
 - Selectors Hub
-- LetXpah

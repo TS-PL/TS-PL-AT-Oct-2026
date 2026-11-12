@@ -26,7 +26,7 @@
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@faker-js/faker": "^10.4.0",
-    "@playwright/test": "^1.59.1",
+    "@playwright/test": "^1.65.0",
     "@types/jsonpath": "0.2.4",
     "@types/node": "^26.6.4",
     "@typescript-eslint/eslint-plugin": "^8.71.0",
