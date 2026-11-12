@@ -5,7 +5,7 @@ import { defineConfig, devices } from '@playwright/test';
  */
 export default defineConfig({
   // folder containing spec files
-  testDir: './playwright/tests/',
+  testDir: './',
 
   /* Set up regex to recognize files with tests by their name */
   // testMatch: '.*(test|spec).(js|ts)', // default is contain 'spec' and end with '.ts'
@@ -17,7 +17,7 @@ export default defineConfig({
   reporter: [['html', { open: 'failure' }]],
 
   /* Output directory for test artifacts */
-  outputDir: './test-results/', // this is default folder
+  // outputDir: './test-results/', // this is default folder
 
   /* Maximum time one test can run for */
   timeout: 30 * 1000, // default is 30 sec. This equals 30 sec.
@@ -35,7 +35,7 @@ export default defineConfig({
   forbidOnly: !!process.env.CI,
 
   /* Retry on CI only */
-  retries: 0,
+  // retries: 0,
 
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
@@ -70,7 +70,7 @@ export default defineConfig({
 
     /* Activates slow motion execution in headed mode */
     launchOptions: {
-      slowMo: 1500,
+      slowMo: 1.5 * 1000, // default is 0 (no slow motion). This equals 1 sec.
     },
   },
 

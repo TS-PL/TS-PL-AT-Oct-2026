@@ -139,6 +139,7 @@ git push -u origin lesson-01-your-name
 - `--retries=3` -> failing tests will be retried multiple times until they pass, or until the maximum number of retries is reached
 - `--last-failed` -> run only the tests that failed in the last test run, first run your tests and then run them again with this flag
 - `--list` -> execute the command to check what tests will be selected without running them
+- `codegen` -> auto generate tests with Codegen
 
 ## Example composite test run command with most of the above:
 
