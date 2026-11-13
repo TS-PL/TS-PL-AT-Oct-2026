@@ -2,8 +2,6 @@
 // npx ts-node homework/nora-dimitrova/homework-4.ts
 // npx tsx homework/nora-dimitrova/homework-4.ts
 
-import { Interface } from "node:readline";
-
 // Homework 04
 
 // Part 1: OOP
@@ -45,20 +43,19 @@ employee.changeName('Orlin');
 
 console.log(employee.getName());
 
-
 // Exercise 2 - User ID System (Interface Basics)
 // Step 1: Define an interface named "WithID" with a property id: number.
 // Step 2: Define an interface named "User" that inherits from the "WithID" interface and adds properties name: string, age: number.
 // Step 3: Create an object of the interface User and assign values to all properties.
 // Step 4: Print the object to the console.
 
-interface WithID{
-id: number;
+interface WithID {
+  id: number;
 }
 
-interface User extends WithID{
-    name: string;
-    age: number;
+interface User extends WithID {
+  name: string;
+  age: number;
 }
 
 const user: User = {
@@ -68,7 +65,6 @@ const user: User = {
 };
 
 console.log(user);
-
 
 // Exercise 3 - Car Rental Service (Encapsulation)
 // Step 1: Define a class named "CarRental" with properties: carType, costPerDay, and methods setCostPerDay, getCostPerDay, rentCar, and a constructor that sets the two properties.
@@ -80,8 +76,32 @@ console.log(user);
 // Example output: "Renting a Hatchback for 3 days will cost: $150"
 // Step 5: Change the costPerDay for one of the car types and print the new rental details in the console.
 
+class CarRental {
+  public carType: string;
+  private costPerDay: number;
 
+  constructor(carType: string, costPerDay: number) {
+    this.carType = carType;
+    this.costPerDay = costPerDay;
+  }
 
+  public setCostPerDay(dailyCost: number): void {
+    this.costPerDay = dailyCost;
+  }
+
+  public rentCar(days: number): string {
+    const totalCost = this.costPerDay * days;
+    return `Renting a ${this.carType} for ${days} days will cost: $${totalCost}`;
+  }
+}
+
+const car1 = new CarRental('BMW', 120);
+const car2 = new CarRental('Audi', 150);
+const car3 = new CarRental('Mercedes', 180);
+
+console.log(car1.rentCar(5));
+console.log(car2.rentCar(3));
+console.log(car3.rentCar(10));
 
 // Exercise 4 - Furniture Factory (Inheritance)
 // Step 1: Create a class called "Chair" that inherits from the base class "Furniture".
@@ -92,11 +112,58 @@ console.log(user);
 // Step 6: Create another object of the class "Chair" with a different type of furniture and print the type of furniture and number of legs in the console.
 // Example output: "Chair 1: Type - Teakwood, Legs - 4"
 
+class Furniture {
+  public typeOfFurniture: string;
+
+  constructor(typeOfFurniture: string = 'Teakwood') {
+    this.typeOfFurniture = typeOfFurniture;
+  }
+}
+
+class Chair extends Furniture {
+  private readonly numberOfLegs: number = 4;
+
+  constructor(typeOfFurniture?: string) {
+    super(typeOfFurniture);
+  }
+
+  public get legs(): number {
+    return this.numberOfLegs;
+  }
+}
+
+const chair1 = new Chair();
+console.log(`Chair 1: Type - ${chair1.typeOfFurniture}, Legs - ${chair1.legs}`);
+
+const chair2 = new Chair('OfficeChair');
+console.log(`Chair 2: Type - ${chair2.typeOfFurniture}, Legs - ${chair2.legs}`);
+
 // Exercise 5 - Music Instruments (Abstraction)
 // Step 1: Create an abstract class called "Instrument" with a method "playMusic".
 // Step 2: Create two subclasses, "Guitar" and "Piano", that inherit from the base class "Instrument".
 // Step 3: Implement the "playMusic" method in both subclasses to log a message indicating which instrument is playing music.
 // Step 4: Create an object of each subclass and call the "playMusic" method to see the different outputs.
+
+abstract class Instrument {
+  abstract playMusic(): void;
+}
+
+class Guitar extends Instrument {
+  public playMusic(): void {
+    console.log('The guitar is playing music.');
+  }
+}
+
+class Piano extends Instrument {
+  public playMusic(): void {
+    console.log('The piano is playing music.');
+  }
+}
+
+const guitar = new Guitar();
+guitar.playMusic();
+const piano = new Piano();
+piano.playMusic();
 
 // Exercise 6 - Animal Kingdom (Polymorphism)
 // Step 1: Create a base class called "Mammal" with:
