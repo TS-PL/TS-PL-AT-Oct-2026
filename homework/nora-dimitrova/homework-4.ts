@@ -233,6 +233,12 @@ waitTwoSeconds().then((result) => {
 // Step 5: Print the result to the console.
 // Step 6: Call the "runTask" function.
 
+async function runTask(): Promise<void> {
+  const result = await waitTwoSeconds();
+  console.log(result);
+}
+runTask();
+
 // Exercise 9 - Simulating API Call
 // Step 1: Create a function named "fetchUser".
 // Step 2: Make it return a Promise with type { id: number; name: string }.
@@ -241,6 +247,20 @@ waitTwoSeconds().then((result) => {
 // Step 5: Create an async function to call "fetchUser".
 // Step 6: Use await to get the result.
 // Step 7: Print the user's name to the console.
+
+function fetchUser(): Promise<{ id: number; name: string }> {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve({ id: 1, name: 'Alice' });
+    }, 1500);
+  });
+}
+async function displayUser() {
+  const user = await fetchUser();
+
+  console.log(user.name);
+}
+displayUser();
 
 // Exercise 10 - Error Handling with async/await
 // Step 1: Create a function named "fetchWithError".
@@ -254,6 +274,31 @@ waitTwoSeconds().then((result) => {
 // Step 7: Print the success message if resolved.
 // Step 8: Print the error message if rejected.
 
+function fetchWithError(): Promise<string> {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const isSuccess = Math.random() > 0.5;
+
+      if (isSuccess) {
+        resolve('Success!');
+      } else {
+        reject('Something went wrong');
+      }
+    }, 1000);
+  });
+}
+
+async function handleFetch(): Promise<void> {
+  try {
+    const result = await fetchWithError();
+    console.log(result);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+handleFetch();
+
 // Exercise 11 - Sequential Async Tasks
 // Step 1: Create a function named "stepOne" that returns a Promise<string>.
 // Step 2: Inside it, use setTimeout to resolve "Step 1 done" after 1000 ms.
@@ -265,3 +310,29 @@ waitTwoSeconds().then((result) => {
 // Step 8: Use await to call "stepTwo" and store the result.
 // Step 9: Print the result.
 // Step 10: Call the "runSteps" function.
+
+function stepOne(): Promise<string> {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve('Step 1 done');
+    }, 1000);
+  });
+}
+
+function stepTwo(): Promise<string> {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve('Step 2 done');
+    }, 1000);
+  });
+}
+
+async function runSteps(): Promise<void> {
+  const firstResult = await stepOne();
+  console.log(firstResult);
+
+  const secondResult = await stepTwo();
+  console.log(secondResult);
+}
+
+runSteps();
