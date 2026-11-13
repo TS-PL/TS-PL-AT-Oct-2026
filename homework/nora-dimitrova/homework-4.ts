@@ -2,6 +2,8 @@
 // npx ts-node homework/nora-dimitrova/homework-4.ts
 // npx tsx homework/nora-dimitrova/homework-4.ts
 
+import { Interface } from "node:readline";
+
 // Homework 04
 
 // Part 1: OOP
@@ -50,6 +52,24 @@ console.log(employee.getName());
 // Step 3: Create an object of the interface User and assign values to all properties.
 // Step 4: Print the object to the console.
 
+interface WithID{
+id: number;
+}
+
+interface User extends WithID{
+    name: string;
+    age: number;
+}
+
+const user: User = {
+  id: 5,
+  name: 'Plamen',
+  age: 35,
+};
+
+console.log(user);
+
+
 // Exercise 3 - Car Rental Service (Encapsulation)
 // Step 1: Define a class named "CarRental" with properties: carType, costPerDay, and methods setCostPerDay, getCostPerDay, rentCar, and a constructor that sets the two properties.
 // Step 2: carType should be visible outside the class, but costPerDay should be private.
@@ -59,6 +79,9 @@ console.log(employee.getName());
 // Step 4: Print the car rental details in the console by calling the method rentCar() for each object with a different number of days rented.
 // Example output: "Renting a Hatchback for 3 days will cost: $150"
 // Step 5: Change the costPerDay for one of the car types and print the new rental details in the console.
+
+
+
 
 // Exercise 4 - Furniture Factory (Inheritance)
 // Step 1: Create a class called "Chair" that inherits from the base class "Furniture".
