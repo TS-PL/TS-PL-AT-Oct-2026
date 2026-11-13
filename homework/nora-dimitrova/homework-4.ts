@@ -213,6 +213,18 @@ herbivore.eat();
 // Step 4: After the delay, resolve the Promise with the message "Done waiting!".
 // Step 5: Call the function and log the result using .then().
 
+function waitTwoSeconds(): Promise<string> {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve('Done waiting!');
+    }, 2000);
+  });
+}
+
+waitTwoSeconds().then((result) => {
+  console.log(result);
+});
+
 // Exercise 8 - Using async/await
 // Step 1: Use the "waitTwoSeconds" function from Exercise 1.
 // Step 2: Create an async function named "runTask".
