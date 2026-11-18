@@ -22,7 +22,7 @@
 
 import { test, expect } from '@playwright/test';
 
-test('test', async ({ page }) => {
+test('Navigate to 11 lection - Introduction to Playwright', async ({ page }) => {
   await page.goto('https://pragmatic.bg/');
 
   await expect(page).toHaveTitle('Pragmatic LLC – Курсове по Програмиране, C#, QA(Тестване), ASP.NET, Java, PHP, Бази Данни',);
