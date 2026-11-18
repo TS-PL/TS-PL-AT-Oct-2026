@@ -1,6 +1,6 @@
 //npx playwright test homework-5.spec.ts
 
-// in cmd write - npx playwright codegen https://pragmatic.bg/
+// in cmd terminal write - npx playwright codegen https://pragmatic.bg/
 
 // use the codegen tool to generate the following scenario:
 
