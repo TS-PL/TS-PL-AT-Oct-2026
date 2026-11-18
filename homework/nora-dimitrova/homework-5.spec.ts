@@ -27,11 +27,14 @@ test('Navigate to 11 lection - Introduction to Playwright', async ({ page }) => 
 
   await expect(page).toHaveTitle('Pragmatic LLC – Курсове по Програмиране, C#, QA(Тестване), ASP.NET, Java, PHP, Бази Данни',);
 
-  await page.getByRole('link', { name: 'Курсове', exact: true }).click();
+  await page.getByRole('link', { name: 'Курсове', exact: true }).hover();
 
   await page.getByRole('link', { name: 'Автоматизирано Тестване с', description: 'Автоматизирано Тестване с Playwright и TypeScript',}).click();
 
+  await expect(page.getByRole('heading', { name: 'Автоматизирано Тестване с Playwright и TypeScript' })).toBeVisible();
+
   await page.getByRole('link', { name: 'Въведение в Playwright' }).click();
 
-  await expect(page.getByRole('link', { name: 'Въведение в Playwright' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Въведение в Playwright' })).toBeVisible();
+  
 });
