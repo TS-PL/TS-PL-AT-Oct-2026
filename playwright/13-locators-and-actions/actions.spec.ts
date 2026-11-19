@@ -3,7 +3,7 @@ import path from 'path';
 
 // documentation: https://playwright.dev/docs/input
 
-test.only('Actions Examples', async ({ page }) => {
+test('Actions Examples', async ({ page }) => {
   await page.goto('https://st2016.inv.bg/');
   //   await page.goto('https://www.wikipedia.org/');
 

@@ -19,3 +19,55 @@ import { test, expect } from '@playwright/test';
 // test.slow(); - force triple default timeout for this scenario or suite
 // test.fail(); - force scenario failure, used to check for false possitves
 // page.pause(); - adds a breakpoint, pausing test execution and entering debug mode
+
+test.describe('Test Suite #1', { tag: '@ts1' }, () => {
+
+  test.use({baseURL: 'https://st2016.inv.bg/', colorScheme: 'light'});
+
+  test(
+    'Annotation example',
+    { tag: ['@ui', '@new-invoice', '@positive', '@regression'] },
+    async ({ page, browserName }) => {
+      test.skip(
+        browserName !== 'chromium',
+        'This scenario does not work on non chromium based browsers',
+      );
+
+      await test.step('Navigate to site URL', async () => {
+        await page.goto('');
+        await expect(page).toHaveTitle('Вход');
+      });
+
+      await test.step('Login to site succesfuly', async () => {
+        await page.locator('#loginusername').fill('karamfilovs@gmail.com');
+        await page.locator('#loginpassword').fill('111111');
+        await page.getByRole('button', { name: 'Вход' }).click();
+        await expect(page).toHaveTitle('Система за фактуриране - QA Ground');
+      });
+
+      // test.fixme(true, 'Bug 123123');
+
+      await test.step('Navigate New Invoice Page', async () => {
+        await page.getByRole('link', { name: 'Нова Фактура', exact: true }).click();
+        await expect(page).toHaveTitle('Нова фактура - QA Ground');
+      });
+    },
+  );
+
+  test('Annotation example 2', { tag: '@ui' }, async ({ page }) => {
+    test.slow();
+
+    await page.goto('');
+    await expect(page).toHaveTitle('Вход');
+
+    await page.locator('#loginusername').fill('karamfilovs@gmail.com');
+    await page.locator('#loginpassword').fill('111111');
+    await page.getByRole('button', { name: 'Вход' }).click();
+    await expect(page).toHaveTitle('Система за фактуриране - QA Ground');
+
+    await page.getByRole('link', { name: 'Нова Фактура', exact: true }).click();
+    await expect(page).toHaveTitle('Нова фактура - QA Ground');
+
+    // await page.pause();
+  });
+});
