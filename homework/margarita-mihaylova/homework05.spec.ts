@@ -1,3 +1,5 @@
+//npx playwright test -g "Pragmatic courses"
+
 import { test, expect } from '@playwright/test';
 
 test('Pragmatic courses', async ({ page }) => {
@@ -6,10 +8,7 @@ test('Pragmatic courses', async ({ page }) => {
     'Pragmatic LLC – Курсове по Програмиране, C#, QA(Тестване), ASP.NET, Java, PHP, Бази Данни',
   );
   await page.getByRole('link', { name: 'Курсове' }).hover();
-  await page
-    .getByRole('link', { name: 'Автоматизирано Тестване с Playwright и TypeScript' })
-    .first()
-    .click();
+  await page.locator('#menu-item-9220').getByRole('link', { name: 'Автоматизирано Тестване с' }).click();
   await expect(
     page.getByRole('heading', { name: 'Автоматизирано Тестване с Playwright и TypeScript' }),
   ).toBeVisible;
