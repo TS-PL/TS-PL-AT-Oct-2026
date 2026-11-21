@@ -6,7 +6,6 @@ import { test, expect } from '@playwright/test';
   Test Suite for the both scenarios - Task1 and Task2.
 */
 test.describe('Test Suite', { tag: ['@smoke', '@regression'] }, () => {
-
   test('Task1 - CSS and XPATH selectors only', async ({ page }) => {
     await test.step('Navigate to the Practice Page.', async () => {
       await page.goto('https://rahulshettyacademy.com/AutomationPractice/');
@@ -51,7 +50,6 @@ test.describe('Test Suite', { tag: ['@smoke', '@regression'] }, () => {
   });
 
   test('Task2 - Playwright selectors only', async ({ page }) => {
-
     await test.step('Navigate to the Playwright Practice page', async () => {
       await page.goto('https://testautomationpractice.blogspot.com/p/playwrightpractice.html');
 
