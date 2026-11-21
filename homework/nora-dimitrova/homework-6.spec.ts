@@ -63,36 +63,50 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Test Suite Task1 and Task2', { tag: ['@suite', '@smoke', '@regression'] }, () => {
   test('Task1 - CSS and XPATH selectors only', async ({ page }) => {
-    await page.goto('https://rahulshettyacademy.com/AutomationPractice/');
-    await expect(page).toHaveTitle('Practice Page', { timeout: 60000 });
+    await test.step('Navigate to the Practice Page.', async () => {
+      await page.goto('https://rahulshettyacademy.com/AutomationPractice/');
+      await expect(page).toHaveTitle('Practice Page', { timeout: 60000 });
+    });
 
-    await page.locator("xpath=//input[@value='radio2']").check();
-    await expect.soft(page.locator("xpath=//input[@value='radio2']")).toBeChecked();
+    await test.step('Check radio button #2. Assert Radio button #2 is checked.', async () => {
+      await page.locator("xpath=//input[@value='radio2']").check();
+      await expect.soft(page.locator("xpath=//input[@value='radio2']")).toBeChecked();
+    });
 
-    await page.locator('css=#autocomplete').pressSequentially('Bulgaria');
-    await page.locator('css=.ui-menu-item-wrapper').click();
-    await expect.soft(page.locator('css=#autocomplete')).toHaveValue('Bulgaria');
+    await test.step('Fill the input with "Bulgaria". Click on the first auto complete suggestion. Verify the input value is "Bulgaria".', async () => {
+      await page.locator('css=#autocomplete').pressSequentially('Bulgaria');
+      await page.locator('css=.ui-menu-item-wrapper').click();
+      await expect.soft(page.locator('css=#autocomplete')).toHaveValue('Bulgaria');
+    });
 
-    await page
-      .locator("xpath=//select[@id='dropdown-class-example']")
-      .selectOption({ label: 'Option2' });
-    await expect
-      .soft(page.locator("xpath=//select[@id='dropdown-class-example']"))
-      .toHaveValue('option2');
+    await test.step('Select option #2 from the dropdown. Verify the selected option is "option2".', async () => {
+      await page
+        .locator("xpath=//select[@id='dropdown-class-example']")
+        .selectOption({ label: 'Option2' });
+      await expect
+        .soft(page.locator("xpath=//select[@id='dropdown-class-example']"))
+        .toHaveValue('option2');
+    });
 
-    await page.locator('css=#checkBoxOption3').check();
-    await expect.soft(page.locator('css=#checkBoxOption3')).toBeChecked();
+    await test.step('Check checkbox #3. Verify checkbox #3 is checked.', async () => {
+      await page.locator('css=#checkBoxOption3').check();
+      await expect.soft(page.locator('css=#checkBoxOption3')).toBeChecked();
+    });
 
-    await expect.soft(page.locator("//input[@id='displayed-text']")).toBeVisible();
-    await page.locator("//input[@id='hide-textbox']").click();
-    await expect(page.locator("//input[@id='displayed-text']")).toBeHidden();
+    await test.step('Click on the "Hide" button. Verify the input element is now hidden.', async () => {
+      await expect.soft(page.locator("//input[@id='displayed-text']")).toBeVisible();
+      await page.locator("//input[@id='hide-textbox']").click();
+      await expect(page.locator("//input[@id='displayed-text']")).toBeHidden();
+    });
 
-    await page.locator('#mousehover').hover();
-    await expect.soft(page.locator("a[href='#top']")).toBeVisible();
+    await test.step('Hover over the "Mouse Hover" element. Verify the "Top" link is now visible.', async () => {
+      await page.locator('#mousehover').hover();
+      await expect.soft(page.locator("a[href='#top']")).toBeVisible();
+    });
   });
 
   test('Task2 - Playwright selectors only', async ({ page }) => {
-    await test.step('Navigate to the Playwright Practice site', async () => {
+    await test.step('Navigate to the Playwright Practice page', async () => {
       await page.goto('https://testautomationpractice.blogspot.com/p/playwrightpractice.html');
 
       if (await page.getByRole('link', { name: 'Разбрах' }).isVisible()) {
