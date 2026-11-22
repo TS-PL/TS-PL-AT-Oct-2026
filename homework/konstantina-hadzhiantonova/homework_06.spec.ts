@@ -78,5 +78,3 @@ test.describe('Test Suite #1', () => {
     });
   });
 });
-
-// In Playwright Practice session group 7. getByTestId() Locators assert one of the element contains part of its text
