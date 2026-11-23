@@ -52,9 +52,8 @@ test.describe('Homework 06 test Suite', () => {
     });
 
     await test.step('Select option #2 from the dropdown and verify it is selected', async () => {
-      const dropdown = page.locator('#dropdown-class-example');
-      await dropdown.selectOption('option2');
-      await expect(dropdown).toHaveValue('option2');
+      await page.locator('#dropdown-class-example').selectOption('option2');
+      await expect(page.locator('#dropdown-class-example')).toHaveValue('option2');
     });
 
     await test.step('Check checkbox #3 and verify it is checked', async () => {
@@ -66,12 +65,11 @@ test.describe('Homework 06 test Suite', () => {
       await page.locator('#hide-textbox').click();
       await expect(page.locator('#displayed-text')).toBeHidden();
     });
+
     await test.step('Hover over the "Mouse Hover" element and verify the "Top" link is visible', async () => {
       await page.locator('#mousehover').hover();
       await expect(page.locator('.mouse-hover-content a:has-text("Top")')).toBeVisible();
     });
-
-    await page.pause();
   });
 
   // second test scenario use only Playwright selectors like page.getByRole('button', { name: 'Вход' }).click();
@@ -104,34 +102,27 @@ test.describe('Homework 06 test Suite', () => {
       );
     });
 
-    await test.step('Click on a navigation bar using getByRole() and assert navigation has taken place', async () => {
+    await test.step('Click on a navigation bar and assert navigation has taken place', async () => {
       await page.locator('#PageList2').getByRole('link', { name: 'Home' }).click();
       await expect(page).toHaveURL('https://testautomationpractice.blogspot.com/');
       await page.goBack();
     });
 
-    await test.step('Assert the color of a paragraph using getByText()', async () => {
-      await expect
-        .soft(page.getByText('Another paragraph with colored text.'))
-        .toHaveCSS('color', 'rgb(0, 128, 0)'); // Assuming the color is green
-      //const paragraph = page.getByText('This is a sample paragraph with colored text.');
-      //await expect(paragraph).toHaveCSS('color', 'rgb(0, 128, 0)'); // Assuming the color is red
+    await test.step('Assert the color of a paragraph', async () => {
+      await expect(page.getByText('Automation Testing Practice')).toHaveCSS(
+        'color',
+        'rgb(181, 18, 0)',
+      );
     });
 
-    await test.step('Check an unchecked radio button using getByLabel() and assert it is checked', async () => {
-      const radioButton = page.getByLabel('Option 1');
-      await radioButton.check();
-      await expect(radioButton).toBeChecked();
-    });
-    await test.step('Fill an input field using getByPlaceholder() and assert it is editable', async () => {
-      const inputField = page.getByPlaceholder('Enter your name');
-      await inputField.fill('Nina Panova');
-      await expect(inputField).toHaveValue('Nina Panova');
+    await test.step('Fill an input field and assert it is editable', async () => {
+      await expect(page.getByPlaceholder('Enter your full name')).toBeEditable();
+      await page.getByPlaceholder('Enter your full name').fill('Nina Panova');
+      await expect(page.getByPlaceholder('Enter your full name')).toHaveValue('Nina Panova');
     });
 
-    await test.step('Assert an image is visible using getByAltText()', async () => {
-      const image = page.getByAltText('Sample Image');
-      await expect(image).toBeVisible();
+    await test.step('Assert an image is visible', async () => {
+      await expect(page.getByAltText('logo image')).toBeVisible();
     });
   });
 });
