@@ -70,7 +70,7 @@ export default defineConfig({
 
     /* Activates slow motion execution in headed mode */
     launchOptions: {
-      slowMo: 250, // default is 0 (no slow motion). This equals 1 sec.
+      slowMo: 750, // default is 0 (no slow motion). This equals 1 sec.
     },
   },
 

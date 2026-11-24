@@ -10,7 +10,7 @@
     "noImplicitOverride": true,
     "paths": {
       "@playwright/*": ["./playwright/*"],
-      "@test/*": ["./test/*"],
+      "@tests/*": ["./tests/*"],
       "@playwright.config": ["./playwright.config.ts"],
       "@testconfig": ["./testConfig.ts"]
     }
