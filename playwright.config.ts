@@ -26,7 +26,7 @@ export default defineConfig({
   expect: { timeout: 5 * 1000 }, // default is 5 sec. This equals 5 sec.
 
   /* Set number of parallel workers */
-  // workers: 1,
+  // workers: 2,
 
   /* Run tests in files in parallel */
   // fullyParallel: true,

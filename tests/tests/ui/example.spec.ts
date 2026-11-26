@@ -1,4 +1,5 @@
 import { test } from '@tests/fixtures';
+import { Credentials } from '@tests/resources/enums/Credentials';
 
 /*
   Page Object Model (POM) implementation with fixtures and step definitions.
@@ -9,7 +10,7 @@ test(
   { tag: '@invoice' },
   async ({ sharedSteps, loginSteps, homeSteps }) => {
     await sharedSteps.navigateToSite();
-    await loginSteps.login();
+    await loginSteps.login(Credentials.USERNAME, Credentials.PASSWORD);
     await homeSteps.navigateToNewInvoicePage();
   },
 );
@@ -19,7 +20,7 @@ test(
   { tag: '@clients' },
   async ({ sharedSteps, loginSteps, homeSteps }) => {
     await sharedSteps.navigateToSite();
-    await loginSteps.login();
+    await loginSteps.login(Credentials.USERNAME, Credentials.PASSWORD);
     await homeSteps.navigateToClientsPage();
   },
 );
@@ -29,7 +30,7 @@ test(
   { tag: '@articles' },
   async ({ sharedSteps, loginSteps, homeSteps }) => {
     await sharedSteps.navigateToSite();
-    await loginSteps.login();
+    await loginSteps.login(Credentials.USERNAME, Credentials.PASSWORD);
     await homeSteps.navigateToArticlesPage();
   },
 );
