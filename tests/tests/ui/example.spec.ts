@@ -9,7 +9,7 @@ test(
   { tag: '@invoice' },
   async ({ sharedSteps, loginSteps, homeSteps }) => {
     await sharedSteps.navigateToSite();
-    await loginSteps.succesfulLogin();
+    await loginSteps.login();
     await homeSteps.navigateToNewInvoicePage();
   },
 );
@@ -19,7 +19,7 @@ test(
   { tag: '@clients' },
   async ({ sharedSteps, loginSteps, homeSteps }) => {
     await sharedSteps.navigateToSite();
-    await loginSteps.succesfulLogin();
+    await loginSteps.login();
     await homeSteps.navigateToClientsPage();
   },
 );
@@ -29,7 +29,7 @@ test(
   { tag: '@articles' },
   async ({ sharedSteps, loginSteps, homeSteps }) => {
     await sharedSteps.navigateToSite();
-    await loginSteps.succesfulLogin();
+    await loginSteps.login();
     await homeSteps.navigateToArticlesPage();
   },
 );

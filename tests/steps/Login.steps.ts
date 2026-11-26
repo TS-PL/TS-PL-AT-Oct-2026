@@ -14,7 +14,7 @@ export default class LoginSteps {
     this.homePage = homePage;
   }
 
-  async succesfulLogin() {
+  async login() {
     await test.step('Login', async () => {
       await this.loginPage.EMAIL_INPUT.fill('karamfilovs@gmail.com');
       await this.loginPage.PASSWORD_INPUT.fill('111111');
