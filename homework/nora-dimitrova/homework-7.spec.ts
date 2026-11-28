@@ -65,7 +65,7 @@ test('Create a new client and delete all five if the limit is reached', async ({
   homeSteps,
   clientsSteps,
 }) => {
-  const clientName = `Homework 7 ${faker.string.alphanumeric(10)}`;
+  const clientName = faker.company.name();
 
   await sharedSteps.navigateToSite();
   await loginSteps.login(Credentials.USERNAME, Credentials.PASSWORD);
