@@ -16,7 +16,7 @@ export default class ClientsPage extends BasePage {
   constructor(page: Page, context: BrowserContext) {
     super(page, context);
 
-    this.url = 'https://st2016.inv.bg/clients/manage';
+    this.url = 'https://st2016.inv.bg/clients/manage/';
     this.title = 'Клиенти - QA Ground';
 
     this.NEW_CLIENT_BUTTON = this.page.getByText(/нов клиент/i).first();
